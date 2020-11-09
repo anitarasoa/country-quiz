@@ -18,9 +18,10 @@
   "homepage": "https://github.com/Betsimisaraka/country-quiz#readme",
   "dependencies": {
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "react-router-dom": "^5.2.0"
   },
   "browserslist": [
-		"last 1 chrome versions"
-	]
+    "last 1 chrome versions"
+  ]
 }
