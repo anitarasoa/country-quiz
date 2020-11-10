@@ -29789,10 +29789,14 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 function App() {
   const [countries, setCountries] = (0, _react.useState)([]);
   const [randomCountry, setRandomCountry] = (0, _react.useState)({});
-  console.log(randomCountry);
   const [randomOptions, setRandomOptions] = (0, _react.useState)([]);
-  console.log(randomOptions);
   const [userIsWin, setUserIsWin] = (0, _react.useState)('');
+  const [disableFieldset, setDisableFieldset] = (0, _react.useState)(false);
+  const [goodGuess, setGoodGuess] = (0, _react.useState)(0);
+  console.log(goodGuess);
+  const [bgColor, setBgColor] = (0, _react.useState)({
+    backgroundColor: 'white'
+  });
 
   async function fetchCountries() {
     const URL_IPA = "https://restcountries.eu/rest/v2/all";
@@ -29820,9 +29824,40 @@ function App() {
     setRandomOptions(randomOptions);
   }
 
+  function checkWin(e) {
+    // setDisableFieldset(true);
+    e.preventDefault();
+    const winCountry = randomCountry.name;
+    const userGuess = e.target.value;
+
+    if (winCountry === userGuess) {
+      setUserIsWin('Win');
+      setGoodGuess(goodGuess + 1);
+      setBgColor({
+        backgroundColor: '#81C784'
+      });
+    } else {
+      setUserIsWin('Lose');
+      setBgColor({
+        backgroundColor: '#FF8A65'
+      });
+    }
+
+    setTimeout(() => {
+      setUserIsWin('');
+      setDisableFieldset(false);
+      setBgColor({
+        backgroundColor: 'white'
+      });
+      console.log(e.target);
+    }, 2000);
+  }
+
   return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, "Country Quiz"), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("img", {
     src: randomCountry.flag
-  }), /*#__PURE__*/_react.default.createElement("p", null, "Which country does this flag belong to?")), /*#__PURE__*/_react.default.createElement("form", null, /*#__PURE__*/_react.default.createElement("button", {
+  }), /*#__PURE__*/_react.default.createElement("p", null, "Which country does this flag belong to?"), /*#__PURE__*/_react.default.createElement("h2", null, userIsWin === 'Win' ? 'You guess right! ' : '', userIsWin === 'Lose' ? 'You guess wrong. ' : '', "Score:", goodGuess)), /*#__PURE__*/_react.default.createElement("form", {
+    onClick: e => checkWin(e)
+  }, /*#__PURE__*/_react.default.createElement("button", {
     value: randomOptions[0]
   }, randomOptions[0]), /*#__PURE__*/_react.default.createElement("button", {
     value: randomOptions[1]
@@ -29830,7 +29865,9 @@ function App() {
     value: randomOptions[2]
   }, randomOptions[2]), /*#__PURE__*/_react.default.createElement("button", {
     value: randomOptions[3]
-  }, randomOptions[3])));
+  }, randomOptions[3])), /*#__PURE__*/_react.default.createElement("button", {
+    onClick: () => fetchCountries()
+  }, "Next"));
 }
 
 var _default = App;
