@@ -1,46 +1,54 @@
 import React, { useEffect, useState } from 'react';
-import {useParams} from 'react-router-dom';
 
-const API = "https://restcountries.eu/rest/v2/all";
-const CAPITAl = "https://restcountries.eu/rest/v2/capital/{capital}";
-const EESTI = "https://restcountries.eu/rest/v2/name/eesti";
-// https://restcountries.eu/rest/v2/name/eesti
-// https://restcountries.eu/rest/v2/name/united
 
 function App() {
-    //fetch the data from the API;
-    const [country, setCountry] = useState([]);
-    const [flags, setFlags] = useState([]);
-    const [currentQuestion, setCurrentQuestion] = useState(0);
-    const [score, setScore] = useState(0);
-    const [showScore, setShowScore] = useState(false);
+    const [countries, setCountries] = useState([]);
+    const [randomCountry, setRandomCountry] = useState({});
+    console.log(randomCountry);
+    const [randomOptions, setRandomOptions] = useState([]);
+    console.log(randomOptions);
+    const [userIsWin, setUserIsWin] = useState('');
 
-    // const FLAG_API = `https://restcountries.eu/data/${flag}`;
-
-    async function fetchData() {
-        const res = await fetch(API);
-        const data = await res.json();
-        setCountry(data);
-        console.log(data);
+    async function fetchCountries() {
+        const URL_IPA = "https://restcountries.eu/rest/v2/all";
+        const response = await fetch(URL_IPA);
+        const countries = await response.json();
+        setCountries(countries);
+        getRandomCountry(countries);
     }
 
     useEffect(() => {
-        fetchData();
+        fetchCountries();
     }, [])
 
-    
+    function getRandomCountry(countries) {
+        const random = countries[Math.floor(Math.random() * countries.length)];
+        console.log(random.name);
+        const randomOpt1 = countries[Math.floor(Math.random() * countries.length)];
+        const randomOpt2 = countries[Math.floor(Math.random() * countries.length)];
+        const randomOpt3 = countries[Math.floor(Math.random() * countries.length)];
+        const randomOptions = [random.name, randomOpt1.name, randomOpt2.name, randomOpt3.name];
+        randomOptions.sort(() => { return 0.5 - Math.random() });
+        setRandomCountry(random);
+        setRandomOptions(randomOptions);
+    }
 
     return (
-        <>
-        <h1>Country Quiz App</h1>
-        {country.map(count => (
-            <div key={count.name}>
-            <img src={count.flag} />
-            <p>{count.capital}</p>
+        <div>
+            <h1>Country Quiz</h1>
+            <div>
+                <img src={randomCountry.flag} />
+                <p>Which country does this flag belong to?</p>
             </div>
-        ))}
-        </>
+            <form>
+                <button value={randomOptions[0]}>{randomOptions[0]}</button>
+                <button value={randomOptions[1]}>{randomOptions[1]}</button>
+                <button value={randomOptions[2]}>{randomOptions[2]}</button>
+                <button value={randomOptions[3]}>{randomOptions[3]}</button>
+            </form>
+        </div>
     )
 }
 
 export default App;
+
