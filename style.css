@@ -1,4 +1,44 @@
+body {
+    background-color: blue;
+}
+
 img {
     width: 100px;
     height: 100px;
+}
+
+.container {
+    background-color: white;
+}
+
+.correct {
+    background-color: blue;
+}
+
+.wrong {
+    background-color: green;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+button {
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.btn-random {
+    text-align: center;
+    width: 400px;
+    background-color: white;
+    border: 2px solid grey;
+}
+
+.next {
+    background-color: orange;
+    border: none;
 }

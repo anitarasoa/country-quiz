@@ -29791,9 +29791,8 @@ function App() {
   const [randomCountry, setRandomCountry] = (0, _react.useState)({});
   const [randomOptions, setRandomOptions] = (0, _react.useState)([]);
   const [userIsWin, setUserIsWin] = (0, _react.useState)('');
-  const [disableFieldset, setDisableFieldset] = (0, _react.useState)(false);
+  const [correctanswer, setCorrectAnswer] = (0, _react.useState)(false);
   const [goodGuess, setGoodGuess] = (0, _react.useState)(0);
-  console.log(goodGuess);
   const [bgColor, setBgColor] = (0, _react.useState)({
     backgroundColor: 'white'
   });
@@ -29825,13 +29824,13 @@ function App() {
   }
 
   function checkWin(e) {
-    // setDisableFieldset(true);
     e.preventDefault();
     const winCountry = randomCountry.name;
     const userGuess = e.target.value;
 
     if (winCountry === userGuess) {
       setUserIsWin('Win');
+      setCorrectAnswer(true);
       setGoodGuess(goodGuess + 1);
       setBgColor({
         backgroundColor: '#81C784'
@@ -29845,7 +29844,6 @@ function App() {
 
     setTimeout(() => {
       setUserIsWin('');
-      setDisableFieldset(false);
       setBgColor({
         backgroundColor: 'white'
       });
@@ -29853,21 +29851,26 @@ function App() {
     }, 2000);
   }
 
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, "Country Quiz"), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("img", {
-    src: randomCountry.flag
-  }), /*#__PURE__*/_react.default.createElement("p", null, "Which country does this flag belong to?"), /*#__PURE__*/_react.default.createElement("h2", null, userIsWin === 'Win' ? 'You guess right! ' : '', userIsWin === 'Lose' ? 'You guess wrong. ' : '', "Score:", goodGuess)), /*#__PURE__*/_react.default.createElement("form", {
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: "container"
+  }, /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("h1", null, "Country Quiz"), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", null), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h2", null, randomCountry.capital, " is the capital of ?")), /*#__PURE__*/_react.default.createElement("h2", null, userIsWin === 'Win' ? 'You guess right! ' : '', userIsWin === 'Lose' ? 'You guess wrong. ' : '', "Score:", goodGuess)), /*#__PURE__*/_react.default.createElement("form", {
     onClick: e => checkWin(e)
   }, /*#__PURE__*/_react.default.createElement("button", {
+    className: "btn-random",
     value: randomOptions[0]
-  }, randomOptions[0]), /*#__PURE__*/_react.default.createElement("button", {
+  }, "A ", randomOptions[0]), /*#__PURE__*/_react.default.createElement("button", {
+    className: "btn-random",
     value: randomOptions[1]
-  }, randomOptions[1]), /*#__PURE__*/_react.default.createElement("button", {
+  }, "B ", randomOptions[1]), /*#__PURE__*/_react.default.createElement("button", {
+    className: "btn-random",
     value: randomOptions[2]
-  }, randomOptions[2]), /*#__PURE__*/_react.default.createElement("button", {
+  }, "C ", randomOptions[2]), /*#__PURE__*/_react.default.createElement("button", {
+    className: "btn-random",
     value: randomOptions[3]
-  }, randomOptions[3])), /*#__PURE__*/_react.default.createElement("button", {
+  }, "D ", randomOptions[3])), /*#__PURE__*/_react.default.createElement("button", {
+    className: "next",
     onClick: () => fetchCountries()
-  }, "Next"));
+  }, "Next")));
 }
 
 var _default = App;
