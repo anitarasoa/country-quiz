@@ -29772,7 +29772,7 @@ if ("development" === 'production') {
 } else {
   module.exports = require('./cjs/react-dom.development.js');
 }
-},{"./cjs/react-dom.development.js":"node_modules/react-dom/cjs/react-dom.development.js"}],"pages/App.js":[function(require,module,exports) {
+},{"./cjs/react-dom.development.js":"node_modules/react-dom/cjs/react-dom.development.js"}],"useCountry.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -29780,17 +29780,14 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _react = _interopRequireWildcard(require("react"));
+var _react = require("react");
 
-function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
-function App() {
+function useCountry() {
   const [countries, setCountries] = (0, _react.useState)([]);
   const [randomCountry, setRandomCountry] = (0, _react.useState)({});
   const [randomOptions, setRandomOptions] = (0, _react.useState)([]);
-  const [userIsWin, setUserIsWin] = (0, _react.useState)('');
+  const [userIsWin, setUserIsWin] = (0, _react.useState)(false);
+  const [isShow, setIsShow] = (0, _react.useState)(false);
   const [correctanswer, setCorrectAnswer] = (0, _react.useState)(false);
   const [goodGuess, setGoodGuess] = (0, _react.useState)(0);
   const [bgColor, setBgColor] = (0, _react.useState)({
@@ -29829,21 +29826,21 @@ function App() {
     const userGuess = e.target.value;
 
     if (winCountry === userGuess) {
-      setUserIsWin('Win');
+      setUserIsWin(true);
       setCorrectAnswer(true);
       setGoodGuess(goodGuess + 1);
       setBgColor({
         backgroundColor: '#81C784'
       });
     } else {
-      setUserIsWin('Lose');
+      setUserIsWin(false);
       setBgColor({
         backgroundColor: '#FF8A65'
       });
     }
 
     setTimeout(() => {
-      setUserIsWin('');
+      setUserIsWin(false);
       setBgColor({
         backgroundColor: 'white'
       });
@@ -29851,9 +29848,52 @@ function App() {
     }, 2000);
   }
 
+  function handleShowBtn() {
+    fetchCountries();
+    setIsShow(false);
+  }
+
+  return {
+    randomOptions,
+    userIsWin,
+    randomCountry,
+    goodGuess,
+    checkWin,
+    fetchCountries,
+    isShow,
+    setIsShow,
+    handleShowBtn
+  };
+}
+
+var _default = useCountry;
+exports.default = _default;
+},{"react":"node_modules/react/index.js"}],"pages/CountryCapital.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _useCountry = _interopRequireDefault(require("../useCountry"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function CountryCapital() {
+  const {
+    randomOptions,
+    userIsWin,
+    randomCountry,
+    goodGuess,
+    checkWin,
+    fetchCountries
+  } = (0, _useCountry.default)();
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "container"
-  }, /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("h1", null, "Country Quiz"), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", null), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h2", null, randomCountry.capital, " is the capital of ?")), /*#__PURE__*/_react.default.createElement("h2", null, userIsWin === 'Win' ? 'You guess right! ' : '', userIsWin === 'Lose' ? 'You guess wrong. ' : '', "Score:", goodGuess)), /*#__PURE__*/_react.default.createElement("form", {
+  }, /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("h1", null, "Country Quiz"), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h2", null, randomCountry.capital, " is the capital of ?")), /*#__PURE__*/_react.default.createElement("h2", null, userIsWin === true ? 'You guess right! ' : '', userIsWin === false ? 'You guess wrong. ' : '', "Score:", goodGuess)), /*#__PURE__*/_react.default.createElement("form", {
     onClick: e => checkWin(e)
   }, /*#__PURE__*/_react.default.createElement("button", {
     className: "btn-random",
@@ -29873,9 +29913,114 @@ function App() {
   }, "Next")));
 }
 
+var _default = CountryCapital;
+exports.default = _default;
+},{"react":"node_modules/react/index.js","../useCountry":"useCountry.js"}],"pages/tryAgain.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _useCountry = _interopRequireDefault(require("../useCountry"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function TryAgain() {
+  const {
+    goodGuess,
+    fetchCountries
+  } = (0, _useCountry.default)();
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, "Results"), /*#__PURE__*/_react.default.createElement("p", null, "Your score: ", goodGuess, " please try again"), /*#__PURE__*/_react.default.createElement("button", {
+    onClick: () => fetchCountries()
+  }, "Try again"));
+}
+
+var _default = TryAgain;
+exports.default = _default;
+},{"react":"node_modules/react/index.js","../useCountry":"useCountry.js"}],"pages/CountryFlag.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _useCountry = _interopRequireDefault(require("../useCountry"));
+
+var _tryAgain = _interopRequireDefault(require("../pages/tryAgain"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function CountryFlag() {
+  const {
+    randomOptions,
+    userIsWin,
+    randomCountry,
+    goodGuess,
+    checkWin,
+    isShow,
+    setIsShow,
+    handleShowBtn
+  } = (0, _useCountry.default)();
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: "container"
+  }, /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("h1", null, "Country Quiz"), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("img", {
+    src: randomCountry.flag
+  }), /*#__PURE__*/_react.default.createElement("p", null, "Which country does this flag belong to?")), /*#__PURE__*/_react.default.createElement("h2", null, userIsWin === true ? 'You guess right! ' : '', userIsWin === false ? 'You guess wrong. ' : '', "Score:", goodGuess)), /*#__PURE__*/_react.default.createElement("form", {
+    onClick: e => checkWin(e)
+  }, /*#__PURE__*/_react.default.createElement("button", {
+    onClick: () => setIsShow(!isShow),
+    className: "btn-random",
+    value: randomOptions[0]
+  }, "A ", randomOptions[0]), /*#__PURE__*/_react.default.createElement("button", {
+    onClick: () => setIsShow(!isShow),
+    className: "btn-random",
+    value: randomOptions[1]
+  }, "B ", randomOptions[1]), /*#__PURE__*/_react.default.createElement("button", {
+    onClick: () => setIsShow(!isShow),
+    className: "btn-random",
+    value: randomOptions[2]
+  }, "C ", randomOptions[2]), /*#__PURE__*/_react.default.createElement("button", {
+    onClick: () => setIsShow(!isShow),
+    className: "btn-random",
+    value: randomOptions[3]
+  }, "D ", randomOptions[3])), isShow && /*#__PURE__*/_react.default.createElement("button", {
+    className: "next",
+    onClick: () => handleShowBtn()
+  }, "Next")));
+}
+
+var _default = CountryFlag;
+exports.default = _default;
+},{"react":"node_modules/react/index.js","../useCountry":"useCountry.js","../pages/tryAgain":"pages/tryAgain.js"}],"pages/App.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _CountryCapital = _interopRequireDefault(require("./CountryCapital"));
+
+var _CountryFlag = _interopRequireDefault(require("./CountryFlag"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function App() {
+  return /*#__PURE__*/_react.default.createElement("main", null, /*#__PURE__*/_react.default.createElement(_CountryFlag.default, null), /*#__PURE__*/_react.default.createElement(_CountryCapital.default, null));
+}
+
 var _default = App;
 exports.default = _default;
-},{"react":"node_modules/react/index.js"}],"index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./CountryCapital":"pages/CountryCapital.js","./CountryFlag":"pages/CountryFlag.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -29915,7 +30060,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58566" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58854" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
