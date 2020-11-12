@@ -1,67 +1,81 @@
-import {useEffect, useState} from 'react';
+import { useEffect, useState } from 'react';
+import Questions from './pages/Questions';
 
 function useCountry() {
-    
+
     const [countries, setCountries] = useState([]);
-    const [randomCountry, setRandomCountry] = useState({});
-    const [randomOptions, setRandomOptions] = useState([]);
-    const [userIsWin, setUserIsWin] = useState(false);
     const [isShow, setIsShow] = useState(false);
-    const [correctanswer, setCorrectAnswer] = useState(false);
-    const [goodGuess, setGoodGuess] = useState(0);
+    const [isCorrect, setIsCorrect] = useState(false);
+    const [classList, setClassList] = useState('');
+    const [score, setScore] = useState(0);
     const [bgColor, setBgColor] = useState({ backgroundColor: 'white' });
 
     async function fetchCountries() {
         const URL_IPA = "https://restcountries.eu/rest/v2/all";
         const response = await fetch(URL_IPA);
         const countries = await response.json();
-        setCountries(countries);
-        getRandomCountry(countries);
+        getRandomeCountry(countries);
+    }
+
+    function getRandomeCountry(countries) {
+        
+        const random = countries[Math.floor(Math.random() * countries.length)];
+        console.log(random.name);
+
+        const randomOpt1 = countries[Math.floor(Math.random() * countries.length)];
+        const randomOpt2 = countries[Math.floor(Math.random() * countries.length)];
+        const randomOpt3 = countries[Math.floor(Math.random() * countries.length)];
+        const randomOptions = [random.name, randomOpt1.name, randomOpt2.name, randomOpt3.name];
+        const sortedOptions = randomOptions.sort(() => { return 0.5 - Math.random() });
+        console.log(sortedOptions);
+
+        const randomQuestion = Questions[Math.floor(Math.random() * Questions.length)];
+        console.log(randomQuestion);
+
+        // const allQuestions = [ randomQuestion.question1 ? `${random.capital} ${randomQuestion.question1}` : `${randomQuestion.question2}`]
+        // console.log(allQuestions);
+
+        const countryQuiz = {
+            question: randomQuestion,
+            country: random,
+            flag: random.flag,
+            capital: random.capital,
+            answers: sortedOptions,
+            correctAnswer: random.name,
+            userAnswer: '',
+        }
+
+        setCountries([countryQuiz]);
     }
 
     useEffect(() => {
         fetchCountries();
     }, [])
 
-    function getRandomCountry(countries) {
-        const random = countries[Math.floor(Math.random() * countries.length)];
-        console.log(random.name);
-        const randomOpt1 = countries[Math.floor(Math.random() * countries.length)];
-        const randomOpt2 = countries[Math.floor(Math.random() * countries.length)];
-        const randomOpt3 = countries[Math.floor(Math.random() * countries.length)];
-        const randomOptions = [random.name, randomOpt1.name, randomOpt2.name, randomOpt3.name];
-        randomOptions.sort(() => { return 0.5 - Math.random() });
-        setRandomCountry(random);
-        setRandomOptions(randomOptions);
-    }
-
-    function checkWin(e) {
+    function handleClick(e) {
         e.preventDefault();
-        const winCountry = randomCountry.name;
         const userGuess = e.target.value;
-        if (winCountry === userGuess) {
-            setUserIsWin(true);
-            setCorrectAnswer(true);
-            setGoodGuess(goodGuess + 1);
-            setBgColor({ backgroundColor: '#81C784' })
-        } else {
-            setUserIsWin(false);
-            setBgColor({ backgroundColor: '#FF8A65' })
-        }
-        setTimeout(() => {
-            setUserIsWin(false);
-            setBgColor({ backgroundColor: 'white' });
-            console.log(e.target)
-        }, 2000)
+        const findAnswer = countries.find(quiz => quiz.correctAnswer);
+        if (userGuess == findAnswer.correctAnswer) {
+            setIsCorrect(true);
+            // userGuess.classList.add('correct');
+            setScore(prev => prev + 1);
+            setBgColor({ backgroundColor: "#81C784" })
 
+        } else if (userGuess !== findAnswer.correctAnswer) {
+            // userGuess.classList.add('incorrect');
+            setIsCorrect(false);
+            setBgColor({ backgroundColor: "#FF8A65" })
+        } 
+        setIsShow(!isShow);
     }
 
     function handleShowBtn() {
-            fetchCountries();
-            setIsShow(false);
+        fetchCountries();
+        setIsShow(false);
     }
 
-    return { randomOptions, userIsWin, randomCountry, goodGuess, checkWin, fetchCountries, isShow, setIsShow, handleShowBtn }
+    return { handleClick, countries,  handleShowBtn, isShow, score, fetchCountries, isCorrect, bgColor };
 }
 
 export default useCountry;

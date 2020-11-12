@@ -1,14 +1,25 @@
 import React from 'react';
-import CountryCapital from './CountryCapital';
 import CountryFlag from './CountryFlag';
-
+import { Route, Switch } from 'react-router-dom';
+import TryAgain from '../pages/tryAgain';
+import useCountry from '../useCountry';
+import Header from '../component/Header';
 
 function App() {
+    const { fetchCountries } = useCountry();
+    
     return (
-        <main>
-            <CountryFlag />
-            <CountryCapital />
-        </main>
+        <>
+        <Header />
+        <Switch>
+            <Route exact path="/">
+                <CountryFlag />
+            </Route>
+            <Route path="/result">
+                <TryAgain fetchCountries={fetchCountries} />
+            </Route>
+        </Switch>
+        </>
     )
 }
 

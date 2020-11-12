@@ -1,5 +1,25 @@
 body {
-    background-color: blue;
+    background-image: url('./background.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding-top: 6rem;
+    position: relative;
+}
+
+.heading {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 54px;
+    text-transform: uppercase;
+    color: #F2F2F2;
+    /* margin: 0 0 0 15rem; */
+    padding-bottom: 10px;
+    position: absolute;
+    top: 0%;
+    left: 29%;
 }
 
 img {
@@ -7,15 +27,69 @@ img {
     height: 100px;
 }
 
+.question {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 36px;
+    color: #2F527B;
+}
+
 .container {
-    background-color: white;
+    background: #FFFFFF;
+    border-radius: 24px;
+    margin-bottom: auto;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 464px;
+    height: 100%;
+    padding-left: 32px;
+    padding-top: 68px;
+    padding-bottom: 68px;
+}
+
+.adventure {
+    position: absolute;
+    top: 3%;
+    left: 57.3%;
+    width: 162px;
+    height: 116px;
+}
+
+.answer_btn {
+    text-align: start;
+    background: #FFFFFF;
+    width: 400px;
+    height: 56px;
+    border: 2px solid rgba(96, 102, 208, 0.7);
+    box-sizing: border-box;
+    border-radius: 12px;
+    padding-left: 19px;
+}
+
+.btn_value, .answer_btn {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
+    color: rgba(96, 102, 208, 0.8);
+}
+
+.btn_value {
+    padding-left: 47px;
+}
+
+.answer_btn + .answer_btn {
+    margin-top: 31px;
 }
 
 .correct {
     background-color: blue;
 }
 
-.wrong {
+.incorrect {
     background-color: green;
 }
 
@@ -27,18 +101,72 @@ form {
 }
 
 button {
-    padding: 1rem;
-    border-radius: 10px;
-}
-
-.btn-random {
-    text-align: center;
-    width: 400px;
-    background-color: white;
-    border: 2px solid grey;
-}
-
-.next {
-    background-color: orange;
+    cursor: pointer;
     border: none;
 }
+
+button:hover {
+    background: #F9A826;
+}
+
+.next_button {
+    background: #F9A826;
+    box-shadow: 0px 2px 4px rgba(252, 168, 47, 0.4);
+    border-radius: 12px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 37px;
+    padding-right: 37px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 27px;
+    color: #FFFFFF;
+    margin-top: 24px;
+}
+
+.result {
+    text-align: center;
+    background-image: url('./undraw_winners_2.svg');
+    background-repeat: no-repeat;
+    background-position: 50% 10%;
+    background-size: 20rem;
+}
+
+.result_heading {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 72px;
+    color: #1D355D;
+    padding-top: 200px;
+}
+
+
+.result_btn {
+    border: 2px solid #1D355D;
+    box-sizing: border-box;
+    border-radius: 12px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    padding-left: 61px;
+    padding-right: 61px;
+}
+
+.result_p {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 27px;
+    color: #1D355D;
+}
+
+.result_score {
+    color: green;
+    font-size: 32px;
+    font-weight: bold;
+}
+
