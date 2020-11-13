@@ -34,15 +34,15 @@ Template for your readme :
 
 <!-- Please update value in the {}  -->
 
-<h1 align="center">{Your project name}</h1>
+<h1 align="center">Country Quiz</h1>
 
 <div align="center">
   <h3>
-    <a href="https://{your-demo-link.your-domain}">
+    <a href=" https://github.com/Betsimisaraka/country-quiz">
       Demo
     </a>
     <span> | </span>
-    <a href="https://{your-url-to-the-solution}">
+    <a href=" https://country-quiz-betsimisaraka.netlify.app/">
       Solution
     </a>
   </h3>
@@ -63,13 +63,32 @@ Template for your readme :
 
 ## Overview
 
-![screenshot](https://user-images.githubusercontent.com/16707738/92399059-5716eb00-f132-11ea-8b14-bcacdc8ec97b.png)
+![screenshot](./assets/hover.webp)
+![screenshot](./assets/right-answer.webp)
+![screenshot](./assets/result.webp)
 
 Introduce your projects by taking a screenshot or a gif. Try to tell visitors a story about your project by answering:
 
 -   Where can I see your demo?
+
+You can see my demo in the github link above with the username `Betsimisaraka`
 -   What was your experience?
+
+I had a lots of experience while doing this project: 
+
+1. fetching the data from the api
+
+1. displaying the questions and the answers randomly.
+
+1. Check if the answer is correct or not and changing their background.
+
+1. Showing the score in the result page.
+
 -   What have you learned/improved?
+
+1. I have learned how can I display questions randomly and the answers by fetchin from the `API`.
+
+1. When the users got the answer wrong stop the quiz and ask them to try again and showing thier score in the second page.
 -   Your wisdom? :)
 
 ### Built With
@@ -77,6 +96,8 @@ Introduce your projects by taking a screenshot or a gif. Try to tell visitors a 
 <!-- This section should list any major frameworks that you built your project using. Here are a few examples.-->
 
 -   [React](https://reactjs.org/)
+-   [Html](https://html.org/)
+-   [Css](https://css.org)
 
 ## Features
 
@@ -90,13 +111,14 @@ To clone and run this application, you'll need [Git](https://git-scm.com) and [N
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/your-user-name/your-project-name
+$ git clone https://github.com/Betsimisaraka/country-quiz
 
 # Install dependencies
-$ npm install
+$ npm install react react-dom
 
 # Run the app
 $ npm start
+$ parcel index.html
 ```
 
 ## Acknowledgements
@@ -106,5 +128,5 @@ $ npm start
 ## Contact
 
 -   Website [your-website.com](https://{your-web-site-link})
--   GitHub [@your-username](https://{github.com/your-usermame})
+-   GitHub [@your-username](https://{github.com/Betsimisaraka})
 -   Twitter [@your-twitter](https://{twitter.com/your-username})

@@ -8,7 +8,6 @@ function DisplayCountries() {
     const {
         countries,
         handleClick,
-        toggle,
         handleShowBtn,
         isShow,
         isCorrect,
@@ -27,8 +26,6 @@ function DisplayCountries() {
                             <DisplayQuiz key={country.capital}
                                 country={country}
                                 handleClick={handleClick}
-                                isCorrect={isCorrect}
-                                toggle={toggle}
                             />
                         ))}
                         {isShow && (<NextButton

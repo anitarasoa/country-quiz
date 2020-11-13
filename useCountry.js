@@ -2,14 +2,11 @@ import { useEffect, useState } from 'react';
 import Questions from './pages/Questions';
 
 function useCountry() {
-
     const [countries, setCountries] = useState([]);
     const [isShow, setIsShow] = useState(false);
     const [isCorrect, setIsCorrect] = useState(false);
-    const [classList, setClassList] = useState('');
     const [score, setScore] = useState(0);
     const [showScore, setShowScore] = useState(false);
-    const [bgColor, setBgColor] = useState({ backgroundColor: 'white' });
 
     async function fetchCountries() {
         const URL_IPA = "https://restcountries.eu/rest/v2/all";
@@ -28,13 +25,8 @@ function useCountry() {
         const randomOpt3 = countries[Math.floor(Math.random() * countries.length)];
         const randomOptions = [random.name, randomOpt1.name, randomOpt2.name, randomOpt3.name];
         const sortedOptions = randomOptions.sort(() => { return 0.5 - Math.random() });
-        console.log(sortedOptions);
 
         const randomQuestion = Questions[Math.floor(Math.random() * Questions.length)];
-        console.log(randomQuestion);
-
-        // const allQuestions = [ randomQuestion.question1 ? `${random.capital} ${randomQuestion.question1}` : `${randomQuestion.question2}`]
-        // console.log(allQuestions);
 
         const countryQuiz = {
             question: randomQuestion,
@@ -55,18 +47,18 @@ function useCountry() {
 
     function handleClick(e) {
         e.preventDefault();
-        console.log(e.target.value);
-        const userGuess = e.target.value;
+        const userGuess = e.target;
         const findAnswer = countries.find(quiz => quiz.correctAnswer);
-        if (userGuess == findAnswer.correctAnswer) {
+        if (userGuess.value === findAnswer.correctAnswer) {
             setIsCorrect(true);
-            // setClassList('correct');
             setScore(score + 1);
-        } else if (userGuess !== findAnswer.correctAnswer) {
-            // setClassList('incorrect');
+            userGuess.style.backgroundColor = '#004643';
+
+        } else if (userGuess.value !== findAnswer.correctAnswer) {
             setIsCorrect(false);
             setShowScore(true)
-        } 
+            userGuess.style.backgroundColor = '#E16162';
+        }
         setIsShow(!isShow);
     }
 
@@ -81,7 +73,7 @@ function useCountry() {
         setShowScore(false);
     }
 
-    return { handleClick, countries,  handleShowBtn, isShow, score, isCorrect, classList, tryTheGameAgain, showScore };
+    return { handleClick, countries,  handleShowBtn, isShow, score, isCorrect, tryTheGameAgain, showScore };
 }
 
 export default useCountry;

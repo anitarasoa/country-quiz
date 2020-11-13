@@ -29806,12 +29806,8 @@ function useCountry() {
   const [countries, setCountries] = (0, _react.useState)([]);
   const [isShow, setIsShow] = (0, _react.useState)(false);
   const [isCorrect, setIsCorrect] = (0, _react.useState)(false);
-  const [classList, setClassList] = (0, _react.useState)('');
   const [score, setScore] = (0, _react.useState)(0);
   const [showScore, setShowScore] = (0, _react.useState)(false);
-  const [bgColor, setBgColor] = (0, _react.useState)({
-    backgroundColor: 'white'
-  });
 
   async function fetchCountries() {
     const URL_IPA = "https://restcountries.eu/rest/v2/all";
@@ -29830,12 +29826,8 @@ function useCountry() {
     const sortedOptions = randomOptions.sort(() => {
       return 0.5 - Math.random();
     });
-    console.log(sortedOptions);
 
     const randomQuestion = _Questions.default[Math.floor(Math.random() * _Questions.default.length)];
-
-    console.log(randomQuestion); // const allQuestions = [ randomQuestion.question1 ? `${random.capital} ${randomQuestion.question1}` : `${randomQuestion.question2}`]
-    // console.log(allQuestions);
 
     const countryQuiz = {
       question: randomQuestion,
@@ -29855,18 +29847,17 @@ function useCountry() {
 
   function handleClick(e) {
     e.preventDefault();
-    console.log(e.target.value);
-    const userGuess = e.target.value;
+    const userGuess = e.target;
     const findAnswer = countries.find(quiz => quiz.correctAnswer);
 
-    if (userGuess == findAnswer.correctAnswer) {
-      setIsCorrect(true); // setClassList('correct');
-
+    if (userGuess.value === findAnswer.correctAnswer) {
+      setIsCorrect(true);
       setScore(score + 1);
-    } else if (userGuess !== findAnswer.correctAnswer) {
-      // setClassList('incorrect');
+      userGuess.style.backgroundColor = '#004643';
+    } else if (userGuess.value !== findAnswer.correctAnswer) {
       setIsCorrect(false);
       setShowScore(true);
+      userGuess.style.backgroundColor = '#E16162';
     }
 
     setIsShow(!isShow);
@@ -29890,7 +29881,6 @@ function useCountry() {
     isShow,
     score,
     isCorrect,
-    classList,
     tryTheGameAgain,
     showScore
   };
@@ -29916,8 +29906,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function DisplayQuiz({
   country,
-  handleClick,
-  classList
+  handleClick
 }) {
   return /*#__PURE__*/_react.default.createElement("main", null, /*#__PURE__*/_react.default.createElement("img", {
     className: "adventure",
@@ -29932,25 +29921,25 @@ function DisplayQuiz({
   }), /*#__PURE__*/_react.default.createElement("h3", {
     className: "question"
   }, country.question.question2))), /*#__PURE__*/_react.default.createElement("form", null, /*#__PURE__*/_react.default.createElement("button", {
-    className: `answer_btn ${classList}`,
+    className: "answer_btn",
     onClick: handleClick,
     value: country.answers[0]
   }, "A ", /*#__PURE__*/_react.default.createElement("span", {
     className: "btn_value"
   }, country.answers[0])), /*#__PURE__*/_react.default.createElement("button", {
-    className: `answer_btn ${classList}`,
+    className: "answer_btn",
     onClick: handleClick,
     value: country.answers[1]
   }, "B ", /*#__PURE__*/_react.default.createElement("span", {
     className: "btn_value"
   }, country.answers[1])), /*#__PURE__*/_react.default.createElement("button", {
-    className: `answer_btn ${classList}`,
+    className: "answer_btn",
     onClick: handleClick,
     value: country.answers[2]
   }, "C ", /*#__PURE__*/_react.default.createElement("span", {
     className: "btn_value"
   }, country.answers[2])), /*#__PURE__*/_react.default.createElement("button", {
-    className: `answer_btn ${classList}`,
+    className: "answer_btn",
     onClick: handleClick,
     value: country.answers[3]
   }, "D ", /*#__PURE__*/_react.default.createElement("span", {
@@ -30043,7 +30032,6 @@ function DisplayCountries() {
   const {
     countries,
     handleClick,
-    toggle,
     handleShowBtn,
     isShow,
     isCorrect,
@@ -30059,9 +30047,7 @@ function DisplayCountries() {
   }, countries.map(country => /*#__PURE__*/_react.default.createElement(_DisplayQuiz.default, {
     key: country.capital,
     country: country,
-    handleClick: handleClick,
-    isCorrect: isCorrect,
-    toggle: toggle
+    handleClick: handleClick
   })), isShow && /*#__PURE__*/_react.default.createElement(_NextButton.default, {
     handleShowBtn: handleShowBtn,
     isCorrect: isCorrect
