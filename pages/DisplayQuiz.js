@@ -1,7 +1,7 @@
 import React from 'react';
 import Svg from '../undraw_adventure_4hum1.svg';
 
-function DisplayQuiz({ country, handleClick }) {
+function DisplayQuiz({ country, handleClick, classList }) {
 
     return (
         <main>
@@ -14,22 +14,22 @@ function DisplayQuiz({ country, handleClick }) {
             </div>
             <form>
                 <button 
-                className="answer_btn" 
+                className={`answer_btn ${classList}`} 
                 onClick={handleClick} 
                 value={country.answers[0]}>
                     A <span className="btn_value">{country.answers[0]}</span></button>
                 <button 
-                className="answer_btn" 
+                className={`answer_btn ${classList}`}
                 onClick={handleClick} 
                 value={country.answers[1]}>
                     B <span className="btn_value">{country.answers[1]}</span></button>
                 <button 
-                className="answer_btn" 
+                className={`answer_btn ${classList}`}
                 onClick={handleClick} 
                 value={country.answers[2]}>
                     C <span className="btn_value">{country.answers[2]}</span></button>
                 <button 
-                className="answer_btn" 
+                className={`answer_btn ${classList}`}
                 onClick={handleClick} 
                 value={country.answers[3]}>
                     D <span className="btn_value">{country.answers[3]}</span></button>

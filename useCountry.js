@@ -8,6 +8,7 @@ function useCountry() {
     const [isCorrect, setIsCorrect] = useState(false);
     const [classList, setClassList] = useState('');
     const [score, setScore] = useState(0);
+    const [showScore, setShowScore] = useState(false);
     const [bgColor, setBgColor] = useState({ backgroundColor: 'white' });
 
     async function fetchCountries() {
@@ -54,18 +55,17 @@ function useCountry() {
 
     function handleClick(e) {
         e.preventDefault();
+        console.log(e.target.value);
         const userGuess = e.target.value;
         const findAnswer = countries.find(quiz => quiz.correctAnswer);
         if (userGuess == findAnswer.correctAnswer) {
             setIsCorrect(true);
-            // userGuess.classList.add('correct');
-            setScore(prev => prev + 1);
-            setBgColor({ backgroundColor: "#81C784" })
-
+            // setClassList('correct');
+            setScore(score + 1);
         } else if (userGuess !== findAnswer.correctAnswer) {
-            // userGuess.classList.add('incorrect');
+            // setClassList('incorrect');
             setIsCorrect(false);
-            setBgColor({ backgroundColor: "#FF8A65" })
+            setShowScore(true)
         } 
         setIsShow(!isShow);
     }
@@ -75,7 +75,13 @@ function useCountry() {
         setIsShow(false);
     }
 
-    return { handleClick, countries,  handleShowBtn, isShow, score, fetchCountries, isCorrect, bgColor };
+    function tryTheGameAgain() {
+        fetchCountries();
+        setScore(0);
+        setShowScore(false);
+    }
+
+    return { handleClick, countries,  handleShowBtn, isShow, score, isCorrect, classList, tryTheGameAgain, showScore };
 }
 
 export default useCountry;
