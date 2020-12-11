@@ -17,22 +17,22 @@ function DisplayQuiz({ country, handleClick }) {
                 className="answer_btn"
                 onClick={handleClick} 
                 value={country.answers[0]}>
-                    A <span className="btn_value">{country.answers[0]}</span></button>
+                    <span className="btn_value">A</span>{country.answers[0]}</button>
                 <button 
                 className="answer_btn"
                 onClick={handleClick} 
                 value={country.answers[1]}>
-                    B <span className="btn_value">{country.answers[1]}</span></button>
+                    <span className="btn_value">B</span>{country.answers[1]}</button>
                 <button 
                 className="answer_btn"
                 onClick={handleClick} 
                 value={country.answers[2]}>
-                    C <span className="btn_value">{country.answers[2]}</span></button>
+                    <span className="btn_value">C</span>{country.answers[2]}</button>
                 <button 
                 className="answer_btn"
                 onClick={handleClick} 
                 value={country.answers[3]}>
-                    D <span className="btn_value">{country.answers[3]}</span></button>
+                    <span className="btn_value">D</span>{country.answers[3]}</button>
             </form>
         </main>
     )

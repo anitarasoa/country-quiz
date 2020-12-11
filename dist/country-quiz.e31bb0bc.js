@@ -29836,7 +29836,7 @@ function useCountry() {
       capital: random.capital,
       answers: sortedOptions,
       correctAnswer: random.name,
-      userAnswer: ''
+      userAnswer: ""
     };
     setCountries([countryQuiz]);
   }
@@ -29853,11 +29853,11 @@ function useCountry() {
     if (userGuess.value === findAnswer.correctAnswer) {
       setIsCorrect(true);
       setScore(score + 1);
-      userGuess.style.backgroundColor = '#004643';
+      userGuess.style.backgroundColor = "#60BF88";
     } else if (userGuess.value !== findAnswer.correctAnswer) {
       setIsCorrect(false);
-      setShowScore(true);
-      userGuess.style.backgroundColor = '#E16162';
+      setShowScore(false);
+      userGuess.style.backgroundColor = "#EA8282";
     }
 
     setIsShow(!isShow);
@@ -29866,12 +29866,14 @@ function useCountry() {
   function handleShowBtn() {
     fetchCountries();
     setIsShow(false);
+    setShowScore(false);
   }
 
   function tryTheGameAgain() {
     fetchCountries();
     setScore(0);
     setShowScore(false);
+    setIsShow(false);
   }
 
   return {
@@ -29881,8 +29883,10 @@ function useCountry() {
     isShow,
     score,
     isCorrect,
+    setIsCorrect,
     tryTheGameAgain,
-    showScore
+    showScore,
+    setShowScore
   };
 }
 
@@ -29924,27 +29928,27 @@ function DisplayQuiz({
     className: "answer_btn",
     onClick: handleClick,
     value: country.answers[0]
-  }, "A ", /*#__PURE__*/_react.default.createElement("span", {
+  }, /*#__PURE__*/_react.default.createElement("span", {
     className: "btn_value"
-  }, country.answers[0])), /*#__PURE__*/_react.default.createElement("button", {
+  }, "A"), country.answers[0]), /*#__PURE__*/_react.default.createElement("button", {
     className: "answer_btn",
     onClick: handleClick,
     value: country.answers[1]
-  }, "B ", /*#__PURE__*/_react.default.createElement("span", {
+  }, /*#__PURE__*/_react.default.createElement("span", {
     className: "btn_value"
-  }, country.answers[1])), /*#__PURE__*/_react.default.createElement("button", {
+  }, "B"), country.answers[1]), /*#__PURE__*/_react.default.createElement("button", {
     className: "answer_btn",
     onClick: handleClick,
     value: country.answers[2]
-  }, "C ", /*#__PURE__*/_react.default.createElement("span", {
+  }, /*#__PURE__*/_react.default.createElement("span", {
     className: "btn_value"
-  }, country.answers[2])), /*#__PURE__*/_react.default.createElement("button", {
+  }, "C"), country.answers[2]), /*#__PURE__*/_react.default.createElement("button", {
     className: "answer_btn",
     onClick: handleClick,
     value: country.answers[3]
-  }, "D ", /*#__PURE__*/_react.default.createElement("span", {
+  }, /*#__PURE__*/_react.default.createElement("span", {
     className: "btn_value"
-  }, country.answers[3]))));
+  }, "D"), country.answers[3])));
 }
 
 var _default = DisplayQuiz;
@@ -29964,14 +29968,25 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function NextButton(props) {
   const {
     handleShowBtn,
-    isCorrect
+    isCorrect,
+    setIsCorrect,
+    setShowScore
   } = props;
+
+  function showModal() {
+    setIsCorrect(false);
+    setShowScore(true);
+  }
+
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "next"
   }, isCorrect ? /*#__PURE__*/_react.default.createElement("button", {
     className: "next_button",
     onClick: handleShowBtn
-  }, "Next") : '');
+  }, "Next") : /*#__PURE__*/_react.default.createElement("button", {
+    className: "next_button",
+    onClick: showModal
+  }, "Next"));
 }
 
 var _default = NextButton;
@@ -30037,7 +30052,10 @@ function DisplayCountries() {
     isCorrect,
     tryTheGameAgain,
     score,
-    showScore
+    showScore,
+    setIsCorrect,
+    setShowScore,
+    buttonRef
   } = (0, _useCountry.default)();
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, showScore ? /*#__PURE__*/_react.default.createElement(_Result.default, {
     score: score,
@@ -30047,10 +30065,13 @@ function DisplayCountries() {
   }, countries.map(country => /*#__PURE__*/_react.default.createElement(_DisplayQuiz.default, {
     key: country.capital,
     country: country,
-    handleClick: handleClick
+    handleClick: handleClick,
+    buttonRef: buttonRef
   })), isShow && /*#__PURE__*/_react.default.createElement(_NextButton.default, {
     handleShowBtn: handleShowBtn,
-    isCorrect: isCorrect
+    isCorrect: isCorrect,
+    setIsCorrect: setIsCorrect,
+    setShowScore: setShowScore
   })));
 }
 
@@ -30093,7 +30114,9 @@ var _Header = _interopRequireDefault(require("../component/Header"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function App() {
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_Header.default, null), /*#__PURE__*/_react.default.createElement(_DisplayCounties.default, null));
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: "main"
+  }, /*#__PURE__*/_react.default.createElement(_Header.default, null), /*#__PURE__*/_react.default.createElement(_DisplayCounties.default, null));
 }
 
 var _default = App;
@@ -30138,7 +30161,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53661" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50614" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

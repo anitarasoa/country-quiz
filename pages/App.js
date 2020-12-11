@@ -5,10 +5,10 @@ import Header from '../component/Header';
 function App() {
 
     return (
-        <>
+        <div className="main">
             <Header />
             <DisplayCounties />
-        </>
+        </div>
     )
 }
 

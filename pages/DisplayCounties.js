@@ -13,7 +13,10 @@ function DisplayCountries() {
         isCorrect,
         tryTheGameAgain,
         score,
-        showScore
+        showScore,
+        setIsCorrect,
+        setShowScore,
+        buttonRef,
     } = useCountry();
 
     return (
@@ -26,11 +29,14 @@ function DisplayCountries() {
                             <DisplayQuiz key={country.capital}
                                 country={country}
                                 handleClick={handleClick}
+                                buttonRef={buttonRef}
                             />
                         ))}
                         {isShow && (<NextButton
                             handleShowBtn={handleShowBtn}
                             isCorrect={isCorrect}
+                            setIsCorrect={setIsCorrect}
+                            setShowScore={setShowScore}
                         />)}
                     </div>
                 )
