@@ -17,7 +17,8 @@ In this project our challenge was to create a country quiz app using an API, and
 ## Overview
 
 ![screenshot](./assets/hover.webp)
-![screenshot](./assets/right-answer.webp)
+![screenshot](./assets/answer.webp)
+![screenshot](./assets/wrong.webp)
 ![screenshot](./assets/result.webp)
 
 -   My demo
