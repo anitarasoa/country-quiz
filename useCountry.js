@@ -61,7 +61,7 @@ function useCountry() {
     if (userGuess.value === countries.correctAnswer) {
       setIsCorrect(true);
       setScore(score + 1);
-      userGuess.classList.add('correct');
+      btnRef.current.classList.add('correct');
     } else if (userGuess.value !== countries.correctAnswer) {
       setIsCorrect(false);
       setShowScore(false);
@@ -73,6 +73,7 @@ function useCountry() {
   }
 
   function handleShowBtn() {
+    btnRef.current.classList.remove('correct');
     setDisabled(!disabled);
     fetchCountries();
     setIsShow(false);

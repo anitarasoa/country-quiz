@@ -197,7 +197,7 @@ button:hover .btn_value {
 }
 
 .result_score {
-    color: green;
+    color: #60BF88;
     font-size: 32px;
     font-weight: bold;
 }
@@ -210,7 +210,6 @@ button:hover .btn_value {
     line-height: 17px;
     color: #F2F2F2;
     text-align: center;
-    padding-top: 100px;
+    padding-top: 50px;
     padding-bottom: 50px;
 }
-
