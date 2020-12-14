@@ -7,7 +7,10 @@ function useCountry() {
   const [isCorrect, setIsCorrect] = useState(false);
   const [score, setScore] = useState(0);
   const [showScore, setShowScore] = useState(false);
-
+  const btnRef = useRef(null);
+  const [disabled, setDisabled] = useState(false);
+  const [letters, setLetters] = useState(['A', 'B', 'C', 'D']);
+ 
   async function fetchCountries() {
     const URL_IPA = "https://restcountries.eu/rest/v2/all";
     const response = await fetch(URL_IPA);
@@ -45,7 +48,7 @@ function useCountry() {
       userAnswer: "",
     };
 
-    setCountries([countryQuiz]);
+    setCountries(countryQuiz);
   }
 
   useEffect(() => {
@@ -55,20 +58,22 @@ function useCountry() {
   function handleClick(e) {
     e.preventDefault();
     const userGuess = e.target;
-    const findAnswer = countries.find((quiz) => quiz.correctAnswer);
-    if (userGuess.value === findAnswer.correctAnswer) {
+    if (userGuess.value === countries.correctAnswer) {
       setIsCorrect(true);
       setScore(score + 1);
-      userGuess.style.backgroundColor = "#60BF88";
-    } else if (userGuess.value !== findAnswer.correctAnswer) {
+      userGuess.classList.add('correct');
+    } else if (userGuess.value !== countries.correctAnswer) {
       setIsCorrect(false);
       setShowScore(false);
-      userGuess.style.backgroundColor = "#EA8282";
+      btnRef.current.classList.add('correct');
+      userGuess.classList.add('incorrect');
     }
     setIsShow(!isShow);
+    setDisabled(true);
   }
 
   function handleShowBtn() {
+    setDisabled(!disabled);
     fetchCountries();
     setIsShow(false);
     setShowScore(false);
@@ -79,6 +84,7 @@ function useCountry() {
     setScore(0);
     setShowScore(false);
     setIsShow(false);
+    setDisabled(false);
   }
 
   return {
@@ -92,6 +98,9 @@ function useCountry() {
     tryTheGameAgain,
     showScore,
     setShowScore,
+    letters,
+    btnRef,
+    disabled
   };
 }
 

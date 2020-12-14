@@ -1,39 +1,35 @@
 import React from 'react';
 import Svg from '../undraw_adventure_4hum1.svg';
 
-function DisplayQuiz({ country, handleClick }) {
+function DisplayQuiz({ countries, handleClick, disabled, letters, btnRef }) {
+
+    const mapLetters = letters.map((letter, i) => <span className="letters" key={i}>{letter}</span>);
+
+    const {capital, flag, question, answers, correctAnswer} = countries;
 
     return (
         <main>
             <img className="adventure" src={Svg} alt="Images"/>
             <div>
-                {country.question.question1 ?
-                    <h3 className='question'>{country.capital} {country.question.question1}</h3> :
-                    <div><img className='question-image' src={country.flag} alt={country.capital} /><h3 className='question'>{country.question.question2}</h3></div>
+                {question && question.question1 
+                    ?   <h3 className='question'>{capital} {question && question.question1}</h3> 
+                    :   <div>
+                            <img className='question-image' src={flag} alt={capital} />
+                            <h3 className='question'>{question && question.question2}</h3>
+                        </div>
                 }
             </div>
-            <form>
-                <button 
-                className="answer_btn"
-                onClick={handleClick} 
-                value={country.answers[0]}>
-                    <span className="btn_value">A</span>{country.answers[0]}</button>
-                <button 
-                className="answer_btn"
-                onClick={handleClick} 
-                value={country.answers[1]}>
-                    <span className="btn_value">B</span>{country.answers[1]}</button>
-                <button 
-                className="answer_btn"
-                onClick={handleClick} 
-                value={country.answers[2]}>
-                    <span className="btn_value">C</span>{country.answers[2]}</button>
-                <button 
-                className="answer_btn"
-                onClick={handleClick} 
-                value={country.answers[3]}>
-                    <span className="btn_value">D</span>{country.answers[3]}</button>
-            </form>
+            <div>
+                {answers && answers.map((option, i) => (
+                    <button key={i} className="answer_btn" 
+                        value={option} 
+                        onClick={handleClick}
+                        disabled={disabled}
+                        ref={correctAnswer === option ? btnRef : null }>
+                        {mapLetters[i]} {option}
+                    </button>
+                ))}
+            </div>
         </main>
     )
 }
