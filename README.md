@@ -17,7 +17,7 @@ In this project our challenge was to create a country quiz app using an API, and
 ## Overview
 
 ![screenshot](./assets/hover.webp)
-![screenshot](./assets/wrong.png)
+![screenshot](./assets/wrong.webp)
 ![screenshot](./assets/result.webp)
 ![screenshot](./assets/page.webp)
 
@@ -81,7 +81,7 @@ $ parcel index.html
 
 ## Contact
 
--   GitHub [@your-username](https://{github.com/Betsimisaraka})
+-   GitHub [Betsimisaraka](https://{github.com/Betsimisaraka})
 
 **API**: https://restcountries.eu/. Use data from the API to create questions and answers.
 
