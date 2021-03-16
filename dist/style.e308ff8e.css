@@ -9,6 +9,10 @@ body {
     margin-left: auto;
 }
 
+main {
+    padding-right: 32px;
+}
+
 .heading {
     font-family: 'Poppins';
     font-style: normal;
@@ -59,17 +63,19 @@ img {
 .answer_btn {
     text-align: start;
     background: #FFFFFF;
-    width: 400px;
-    height: 56px;
+    width: 100%;
+    padding-top: 15px;
+    padding-bottom: 15px;
     border: 2px solid rgba(96, 102, 208, 0.7);
     box-sizing: border-box;
     border-radius: 12px;
     padding-left: 19px;
+    padding-right: 19px;
 }
 
 .answer_btn:focus {
     outline: none;
-    border: unset;
+    border: none;
 }
 
 .btn_value, .answer_btn {
@@ -131,6 +137,11 @@ button:hover .btn_value {
     color: white;
 }
 
+.next {
+    text-align: end;
+    padding-right: 32px;
+}
+
 .next_button {
     background: #F9A826;
     box-shadow: 0px 2px 4px rgba(252, 168, 47, 0.4);
@@ -147,7 +158,6 @@ button:hover .btn_value {
     color: #FFFFFF;
     margin-top: 24px;
     margin-bottom: -2rem;
-    margin-left: 18rem;
 }
 
 .result {
