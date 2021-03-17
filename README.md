@@ -1,4 +1,4 @@
-<h1 align="center">Country Quiz</h1>
+## Country quiz
 
 <div align="center">
   <h3>
