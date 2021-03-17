@@ -95,6 +95,7 @@ img {
     margin-top: 21px;
 }
 
+.correct:hover, .correct:active,
 .correct {
     background-color: #60BF88;
     background-image: url('./assets/correct.svg');
@@ -104,6 +105,7 @@ img {
     border: none;
 }
 
+.incorrect:hover, .incorrect:active,
 .incorrect {
     background-color: #EA8282;
     background-image: url('./assets/incorrect.svg');
