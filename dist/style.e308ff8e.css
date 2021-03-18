@@ -9,10 +9,6 @@ body {
     margin-left: auto;
 }
 
-main {
-    padding-right: 32px;
-}
-
 .heading {
     font-family: 'Poppins';
     font-style: normal;
@@ -50,6 +46,7 @@ img {
     padding-left: 32px;
     padding-top: 50px;
     padding-bottom: 50px;
+    padding-right: 32px;
 }
 
 .adventure {
@@ -64,6 +61,7 @@ img {
     text-align: start;
     background: #FFFFFF;
     width: 100%;
+    min-height: 65px;
     padding-top: 15px;
     padding-bottom: 15px;
     border: 2px solid rgba(96, 102, 208, 0.7);
@@ -169,6 +167,7 @@ button:hover .btn_value {
     background-position: 50% 10%;
     background-size: 20rem;
     padding-left: unset;
+    padding-right: unset;
 }
 
 .result_heading {
@@ -186,8 +185,7 @@ button:hover .btn_value {
     border: 2px solid #1D355D;
     box-sizing: border-box;
     border-radius: 12px;
-    padding-top: 18px;
-    padding-bottom: 18px;
+    height: 62px;
     padding-left: 61px;
     padding-right: 61px;
     background-color: white;
