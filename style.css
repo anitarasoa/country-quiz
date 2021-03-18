@@ -168,6 +168,7 @@ button:hover .btn_value {
     background-repeat: no-repeat;
     background-position: 50% 10%;
     background-size: 20rem;
+    padding-left: unset;
 }
 
 .result_heading {
