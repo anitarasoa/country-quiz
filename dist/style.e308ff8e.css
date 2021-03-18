@@ -165,9 +165,11 @@ button:hover .btn_value {
     background-image: url('/undraw_winners_2.a1136840.svg');
     background-repeat: no-repeat;
     background-position: 50% 10%;
-    background-size: 20rem;
+    background-size: 18rem;
     padding-left: unset;
     padding-right: unset;
+    padding-top: 49px;
+    padding-bottom: 33px;
 }
 
 .result_heading {
@@ -178,6 +180,7 @@ button:hover .btn_value {
     line-height: 72px;
     color: #1D355D;
     padding-top: 200px;
+    margin: 0;
 }
 
 
@@ -208,6 +211,8 @@ button:hover .btn_value {
     font-size: 18px;
     line-height: 27px;
     color: #1D355D;
+    padding-bottom: 71px;
+    margin-bottom: 0;
 }
 
 .result_score {
