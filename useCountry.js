@@ -18,6 +18,12 @@ function useCountry() {
     getRandomeCountry(countries);
   }
 
+  useEffect(() => {
+    setTimeout(() => {
+      fetchCountries();
+    }, 500);
+  }, [])
+
   function getRandomeCountry(countries) {
     const random = countries[Math.floor(Math.random() * countries.length)];
     console.log(random.name);
@@ -50,10 +56,6 @@ function useCountry() {
 
     setCountries(countryQuiz);
   }
-
-  useEffect(() => {
-    fetchCountries();
-  }, []);
 
   function handleClick(e) {
     e.preventDefault();

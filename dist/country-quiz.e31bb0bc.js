@@ -29819,6 +29819,12 @@ function useCountry() {
     getRandomeCountry(countries);
   }
 
+  (0, _react.useEffect)(() => {
+    setTimeout(() => {
+      fetchCountries();
+    }, 500);
+  }, []);
+
   function getRandomeCountry(countries) {
     const random = countries[Math.floor(Math.random() * countries.length)];
     console.log(random.name);
@@ -29843,10 +29849,6 @@ function useCountry() {
     };
     setCountries(countryQuiz);
   }
-
-  (0, _react.useEffect)(() => {
-    fetchCountries();
-  }, []);
 
   function handleClick(e) {
     e.preventDefault();
@@ -29940,7 +29942,9 @@ function DisplayQuiz({
     className: "adventure",
     src: _undraw_adventure_4hum.default,
     alt: "Images"
-  }), /*#__PURE__*/_react.default.createElement("div", null, question && question.question1 ? /*#__PURE__*/_react.default.createElement("h3", {
+  }), /*#__PURE__*/_react.default.createElement("div", {
+    className: "question_content"
+  }, question && question.question1 ? /*#__PURE__*/_react.default.createElement("h3", {
     className: "question"
   }, capital, " ", question && question.question1) : /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("img", {
     className: "question-image",
@@ -29948,7 +29952,9 @@ function DisplayQuiz({
     alt: capital
   }), /*#__PURE__*/_react.default.createElement("h3", {
     className: "question"
-  }, question && question.question2))), /*#__PURE__*/_react.default.createElement("div", null, answers && answers.map((option, i) => /*#__PURE__*/_react.default.createElement("button", {
+  }, question && question.question2))), /*#__PURE__*/_react.default.createElement("div", {
+    className: "button_container"
+  }, answers && answers.map((option, i) => /*#__PURE__*/_react.default.createElement("button", {
     key: i,
     className: "answer_btn",
     value: option,
@@ -30023,6 +30029,7 @@ function TryAgain({
   }, "You got ", /*#__PURE__*/_react.default.createElement("span", {
     className: "result_score"
   }, score), " correct answers"), /*#__PURE__*/_react.default.createElement("button", {
+    type: "button",
     className: "result_btn",
     onClick: tryTheGameAgain
   }, "Try again"));
@@ -30193,7 +30200,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59500" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60050" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

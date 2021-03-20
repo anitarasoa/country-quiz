@@ -8,9 +8,9 @@ function DisplayQuiz({ countries, handleClick, disabled, letters, btnRef }) {
     const {capital, flag, question, answers, correctAnswer} = countries;
 
     return (
-        <main>
+        <main>   
             <img className="adventure" src={Svg} alt="Images"/>
-            <div>
+            <div className="question_content">
                 {question && question.question1 
                     ?   <h3 className='question'>{capital} {question && question.question1}</h3> 
                     :   <div>
@@ -19,7 +19,7 @@ function DisplayQuiz({ countries, handleClick, disabled, letters, btnRef }) {
                         </div>
                 }
             </div>
-            <div>
+            <div className="button_container">
                 {answers && answers.map((option, i) => (
                     <button key={i} className="answer_btn" 
                         value={option} 

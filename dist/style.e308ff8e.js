@@ -189,7 +189,7 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"./background.png":[["background.e3ad310f.png","background.png"],"background.png"],"./assets\\correct.svg":[["correct.34a3b0bd.svg","assets/correct.svg"],"assets/correct.svg"],"./assets\\incorrect.svg":[["incorrect.eeca292d.svg","assets/incorrect.svg"],"assets/incorrect.svg"],"./undraw_winners_2.svg":[["undraw_winners_2.a1136840.svg","undraw_winners_2.svg"],"undraw_winners_2.svg"],"_css_loader":"../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./background.png":[["background.e3ad310f.png","background.png"],"background.png"],"./undraw_winners_2.svg":[["undraw_winners_2.a1136840.svg","undraw_winners_2.svg"],"undraw_winners_2.svg"],"./assets\\correct.svg":[["correct.34a3b0bd.svg","assets/correct.svg"],"assets/correct.svg"],"./assets\\incorrect.svg":[["incorrect.eeca292d.svg","assets/incorrect.svg"],"assets/incorrect.svg"],"_css_loader":"../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -217,7 +217,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59500" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60050" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
