@@ -29822,12 +29822,11 @@ function useCountry() {
   (0, _react.useEffect)(() => {
     setTimeout(() => {
       fetchCountries();
-    }, 500);
+    }, 1000);
   }, []);
 
   function getRandomeCountry(countries) {
     const random = countries[Math.floor(Math.random() * countries.length)];
-    console.log(random.name);
     const randomOpt1 = countries[Math.floor(Math.random() * countries.length)];
     const randomOpt2 = countries[Math.floor(Math.random() * countries.length)];
     const randomOpt3 = countries[Math.floor(Math.random() * countries.length)];
@@ -29945,13 +29944,15 @@ function DisplayQuiz({
   }), /*#__PURE__*/_react.default.createElement("div", {
     className: "question_content"
   }, question && question.question1 ? /*#__PURE__*/_react.default.createElement("h3", {
-    className: "question"
-  }, capital, " ", question && question.question1) : /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("img", {
+    className: "question first_question__heading"
+  }, capital, " ", question && question.question1) : /*#__PURE__*/_react.default.createElement("div", {
+    className: "next_qestion"
+  }, /*#__PURE__*/_react.default.createElement("img", {
     className: "question-image",
     src: flag,
     alt: capital
   }), /*#__PURE__*/_react.default.createElement("h3", {
-    className: "question"
+    className: "question second_question__heading"
   }, question && question.question2))), /*#__PURE__*/_react.default.createElement("div", {
     className: "button_container"
   }, answers && answers.map((option, i) => /*#__PURE__*/_react.default.createElement("button", {
@@ -30004,7 +30005,9 @@ function NextButton(props) {
 
 var _default = NextButton;
 exports.default = _default;
-},{"react":"node_modules/react/index.js"}],"pages/Result.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js"}],"undraw_winners_2.svg":[function(require,module,exports) {
+module.exports = "/undraw_winners_2.a1136840.svg";
+},{}],"pages/Result.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -30014,6 +30017,8 @@ exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
+var _undraw_winners_ = _interopRequireDefault(require("../undraw_winners_2.svg"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function TryAgain({
@@ -30022,7 +30027,13 @@ function TryAgain({
 }) {
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "container result"
-  }, /*#__PURE__*/_react.default.createElement("h1", {
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "result_image__container"
+  }, /*#__PURE__*/_react.default.createElement("img", {
+    className: "result_image",
+    src: _undraw_winners_.default,
+    alt: "You won"
+  })), /*#__PURE__*/_react.default.createElement("h1", {
     className: "result_heading"
   }, "Results"), /*#__PURE__*/_react.default.createElement("p", {
     className: "result_p"
@@ -30037,7 +30048,7 @@ function TryAgain({
 
 var _default = TryAgain;
 exports.default = _default;
-},{"react":"node_modules/react/index.js"}],"pages/DisplayCounties.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../undraw_winners_2.svg":"undraw_winners_2.svg"}],"pages/DisplayCounties.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -30073,11 +30084,14 @@ function DisplayCountries() {
     btnRef,
     disabled
   } = (0, _useCountry.default)();
+  const {
+    question
+  } = countries;
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, showScore ? /*#__PURE__*/_react.default.createElement(_Result.default, {
     score: score,
     tryTheGameAgain: tryTheGameAgain
   }) : /*#__PURE__*/_react.default.createElement("div", {
-    className: "container"
+    className: `container ${question && question.question1 ? "first_question" : "second_question"}`
   }, /*#__PURE__*/_react.default.createElement(_DisplayQuiz.default, {
     countries: countries,
     handleClick: handleClick,
@@ -30200,7 +30214,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60050" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61043" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

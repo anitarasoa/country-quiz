@@ -21,12 +21,14 @@ function DisplayCountries() {
         disabled
     } = useCountry();
 
+    const { question } = countries;
+
     return (
         <>
             {showScore
                 ? (<TryAgain score={score} tryTheGameAgain={tryTheGameAgain} />)
                 : (
-                    <div className="container">
+                    <div className={`container ${question && question.question1 ? "first_question" : "second_question"}`}>
                             <DisplayQuiz
                                 countries={countries}
                                 handleClick={handleClick}

@@ -12,10 +12,10 @@ function DisplayQuiz({ countries, handleClick, disabled, letters, btnRef }) {
             <img className="adventure" src={Svg} alt="Images"/>
             <div className="question_content">
                 {question && question.question1 
-                    ?   <h3 className='question'>{capital} {question && question.question1}</h3> 
-                    :   <div>
+                    ?   <h3 className='question first_question__heading'>{capital} {question && question.question1}</h3> 
+                    :   <div className="next_qestion">
                             <img className='question-image' src={flag} alt={capital} />
-                            <h3 className='question'>{question && question.question2}</h3>
+                            <h3 className='question second_question__heading'>{question && question.question2}</h3>
                         </div>
                 }
             </div>

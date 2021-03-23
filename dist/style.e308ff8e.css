@@ -1,3 +1,7 @@
+html {
+    font-family: 'Poppins', sans-serif;
+}
+
 body {
     margin-left: 22px;
     margin-right: 22px;
@@ -12,6 +16,7 @@ body {
     max-width: 464px;
     margin-right: auto;
     margin-left: auto;
+    margin-top: 50px;
 }
 
 .heading {
@@ -26,11 +31,6 @@ body {
     margin: 0;
 }
 
-img {
-    width: 84px;
-    height: 54px;
-}
-
 .question {
     font-family: 'Poppins';
     font-style: normal;
@@ -41,48 +41,104 @@ img {
     margin: 0;
 }
 
+.first_question__heading {
+    margin-top: 48px;
+    padding-bottom: 2rem;
+    margin-left: 2rem;
+    margin-right: 59px;
+}
+
+.next_qestion {
+    padding-top: 63px;
+    margin-left: 32px;
+    margin-right: 59px;
+}
+
+.second_question__heading {
+    margin-top: 28px;
+    margin-bottom: 32px;
+}
+
 .container {
     background: #FFFFFF;
     border-radius: 24px;
-    margin-bottom: auto;
-    /* margin-right: 22px;
-    margin-left: 22px; */
-    max-width: 464px;
-    height: 550px;
-    padding-left: 32px;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    padding-right: 32px;
+}
+
+.first_question {
+    height: 559px;
+    width: 464px;
+}
+
+.second_question {
+    height: 685px;
+    width: 464px;
+}
+
+.question-image {
+    width: 84px;
+    height: 54px;
 }
 
 .result {
     text-align: center;
-    background-image: url('/undraw_winners_2.a1136840.svg');
-    background-repeat: no-repeat;
-    background-position: 50% 10%;
-    background-size: 18rem;
-    padding-left: unset;
-    height: unset;
-    padding-right: unset;
-    padding-top: 49px;
-    padding-bottom: 33px;
+    height: 542px;
+    max-width: 464px;
 }
+
+.result_image__container {
+    padding-top: 49px;
+}
+
+.result_image {
+    width: 238px;
+    height: 128px;
+}
+
+.result_heading {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 72px;
+    color: #1D355D;
+    padding-top: 72px;
+    margin: 0;
+}
+
+.result_btn {
+    border: 2px solid #1D355D;
+    box-sizing: border-box;
+    border-radius: 12px;
+    height: 62px;
+    padding-left: 61px;
+    padding-right: 61px;
+    background-color: white;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+    color: #1D355D;
+}
+
 
 .adventure {
     position: absolute;
-    top: 0%;
+    top: -1.5%;
     left: 65%;
     width: 162px;
     height: 116px;
 }
 
+.button_container {
+    text-align: center;
+}
+
 .answer_btn {
     text-align: start;
     background: #FFFFFF;
-    width: 100%;
+    width: 400px;
     min-height: 65px;
-    padding-top: 15px;
-    padding-bottom: 15px;
     border: 2px solid rgba(96, 102, 208, 0.7);
     box-sizing: border-box;
     border-radius: 12px;
@@ -109,7 +165,7 @@ img {
 }
 
 .answer_btn + .answer_btn {
-    margin-top: 21px;
+    margin-top: 25px;
 }
 
 .correct:hover, .correct:active,
@@ -165,7 +221,7 @@ button:hover .btn_value {
     box-shadow: 0px 2px 4px rgba(252, 168, 47, 0.4);
     border-radius: 12px;
     padding-top: 15px;
-    padding-bottom: 15px;
+    padding-bottom: 14px;
     padding-left: 37px;
     padding-right: 37px;
     font-family: 'Poppins';
@@ -175,35 +231,7 @@ button:hover .btn_value {
     line-height: 27px;
     color: #FFFFFF;
     margin-top: 24px;
-    margin-bottom: -2rem;
-}
-
-.result_heading {
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: bold;
-    font-size: 48px;
-    line-height: 72px;
-    color: #1D355D;
-    padding-top: 200px;
-    margin: 0;
-}
-
-
-.result_btn {
-    border: 2px solid #1D355D;
-    box-sizing: border-box;
-    border-radius: 12px;
-    height: 62px;
-    padding-left: 61px;
-    padding-right: 61px;
-    background-color: white;
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 27px;
-    color: #1D355D;
+    margin-right: 32px;
 }
 
 .letters {
@@ -240,15 +268,12 @@ button:hover .btn_value {
 }
 
 .question_content {
-    height: 9rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
 }
 
-.button_container {
-    height: 342px;
-}
+
 
 /*# sourceMappingURL=/style.e308ff8e.css.map */

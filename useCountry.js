@@ -21,13 +21,11 @@ function useCountry() {
   useEffect(() => {
     setTimeout(() => {
       fetchCountries();
-    }, 500);
+    }, 1000);
   }, [])
 
   function getRandomeCountry(countries) {
     const random = countries[Math.floor(Math.random() * countries.length)];
-    console.log(random.name);
-
     const randomOpt1 = countries[Math.floor(Math.random() * countries.length)];
     const randomOpt2 = countries[Math.floor(Math.random() * countries.length)];
     const randomOpt3 = countries[Math.floor(Math.random() * countries.length)];
