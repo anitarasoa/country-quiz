@@ -42,14 +42,14 @@ body {
 }
 
 .first_question__heading {
-    margin-top: 48px;
-    padding-bottom: 2rem;
-    margin-left: 2rem;
+    padding-top: 68px;
+    padding-bottom: 32px;
+    margin-left: 32px;
     margin-right: 59px;
 }
 
 .next_qestion {
-    padding-top: 63px;
+    padding-top: 68px;
     margin-left: 32px;
     margin-right: 59px;
 }
@@ -70,7 +70,7 @@ body {
 }
 
 .second_question {
-    height: 685px;
+    height: 717px;
     width: 464px;
 }
 
