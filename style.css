@@ -42,8 +42,8 @@ body {
 }
 
 .first_question__heading {
-    padding-top: 68px;
-    padding-bottom: 32px;
+    margin-top: 68px;
+    margin-bottom: 32px;
     margin-left: 32px;
     margin-right: 59px;
 }
