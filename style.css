@@ -65,7 +65,8 @@ body {
 }
 
 .first_question {
-    height: 559px;
+    min-height: 515px;
+    padding-bottom: 32px;
     width: 464px;
 }
 
