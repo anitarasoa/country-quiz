@@ -21,10 +21,6 @@ In this project our challenge was to create a country quiz app using an API, and
 ![screenshot](./assets/result.webp)
 ![screenshot](./assets/page.webp)
 
--   My demo
-
-You can see my demo by clicking this github link with the username [Betsimisaraka](https://github.com/Betsimisaraka/country-quiz)
-
 - My experience
 
 I had quite lots of experience while doing this project: 

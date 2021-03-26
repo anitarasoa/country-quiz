@@ -66,18 +66,21 @@ body {
 
 .first_question {
     min-height: 515px;
-    padding-bottom: 32px;
     width: 464px;
+    /* padding-bottom: 32px; */
+    /* padding-bottom: 68px; */
 }
 
 .second_question {
-    height: 717px;
+    min-height: 629px;
     width: 464px;
+    /* padding-bottom: 64px; */
 }
 
 .question-image {
     width: 84px;
     height: 54px;
+    object-fit: cover;
 }
 
 .result {
@@ -91,6 +94,7 @@ body {
 }
 
 .result_image {
+    object-fit: cover;
     width: 238px;
     height: 128px;
 }
@@ -125,7 +129,7 @@ body {
 
 .adventure {
     position: absolute;
-    top: -1.5%;
+    top: -1%;
     left: 65%;
     width: 162px;
     height: 116px;
@@ -224,7 +228,7 @@ button:hover .btn_value {
     padding-top: 15px;
     padding-bottom: 14px;
     padding-left: 37px;
-    padding-right: 37px;
+    padding-right: 36px;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: bold;
@@ -233,6 +237,7 @@ button:hover .btn_value {
     color: #FFFFFF;
     margin-top: 24px;
     margin-right: 32px;
+    margin-bottom: 32px;
 }
 
 .letters {
