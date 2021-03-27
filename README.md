@@ -12,7 +12,7 @@
   </h3>
 </div>
 
-In this project our challenge was to create a country quiz app using an API, and use React to handle the frontend.
+In this project, I created a little quiz which contains two questions about a country. This is called a country quiz app using an API, and using React to handle the frontend.
 
 ## Overview
 
@@ -20,6 +20,10 @@ In this project our challenge was to create a country quiz app using an API, and
 ![screenshot](./assets/wrong.webp)
 ![screenshot](./assets/result.webp)
 ![screenshot](./assets/page.webp)
+
+## Design
+
+You can see the the figma design [here](https://www.figma.com/file/Gw0ZNBbYN8asqFlZWy3jG1)
 
 - My experience
 
@@ -32,13 +36,6 @@ I had quite lots of experience while doing this project:
 1. Check if the answer is correct or not and changing their background.
 
 1. Showing the score in the result page.
-
--   What have you learned/improved?
-
-1. I have learned how can I display questions randomly and the answers by fetchin from the `API`.
-
-1. When the users got the answer wrong stop the quiz and ask them to try again and showing thier score in the second page.
-
 
 ### Built With
 
@@ -60,7 +57,7 @@ These are the user stories that I had to fulfilled:
 
 <!-- Example: -->
 
-To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
+To clone and run this application, you'll need [Git](https://git-scm.com), [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) and [parcel bundler](https://parceljs.org/getting_started.html) installed on your computer. From your command line:
 
 ```bash
 # Clone this repository

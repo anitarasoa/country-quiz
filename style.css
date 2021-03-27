@@ -67,14 +67,11 @@ body {
 .first_question {
     min-height: 515px;
     width: 464px;
-    /* padding-bottom: 32px; */
-    /* padding-bottom: 68px; */
 }
 
 .second_question {
     min-height: 629px;
     width: 464px;
-    /* padding-bottom: 64px; */
 }
 
 .question-image {
