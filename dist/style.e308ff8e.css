@@ -258,18 +258,6 @@ button:hover .btn_value {
     font-weight: bold;
 }
 
-.footer {
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 17px;
-    color: #F2F2F2;
-    text-align: center;
-    padding-top: 50px;
-    padding-bottom: 50px;
-}
-
 .question_content {
     display: flex;
     flex-direction: column;

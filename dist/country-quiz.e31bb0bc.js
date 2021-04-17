@@ -30128,26 +30128,6 @@ function Header() {
 
 var _default = Header;
 exports.default = _default;
-},{"react":"node_modules/react/index.js"}],"component/Footer.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _react = _interopRequireDefault(require("react"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function Footer() {
-  return /*#__PURE__*/_react.default.createElement("div", {
-    className: "footer"
-  }, "Your name @ DevChallenges.io");
-}
-
-var _default = Footer;
-exports.default = _default;
 },{"react":"node_modules/react/index.js"}],"pages/App.js":[function(require,module,exports) {
 "use strict";
 
@@ -30162,19 +30142,17 @@ var _DisplayCounties = _interopRequireDefault(require("../pages/DisplayCounties"
 
 var _Header = _interopRequireDefault(require("../component/Header"));
 
-var _Footer = _interopRequireDefault(require("../component/Footer"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function App() {
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "main"
-  }, /*#__PURE__*/_react.default.createElement(_Header.default, null), /*#__PURE__*/_react.default.createElement(_DisplayCounties.default, null), /*#__PURE__*/_react.default.createElement(_Footer.default, null));
+  }, /*#__PURE__*/_react.default.createElement(_Header.default, null), /*#__PURE__*/_react.default.createElement(_DisplayCounties.default, null));
 }
 
 var _default = App;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","../pages/DisplayCounties":"pages/DisplayCounties.js","../component/Header":"component/Header.js","../component/Footer":"component/Footer.js"}],"index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../pages/DisplayCounties":"pages/DisplayCounties.js","../component/Header":"component/Header.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -30214,7 +30192,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51902" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64505" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
