@@ -19,9 +19,7 @@ function useCountry() {
   }
 
   useEffect(() => {
-    setTimeout(() => {
-      fetchCountries()
-    }, 1000)
+    fetchCountries()
   }, [])
 
   function getRandomeCountry(countries) {
