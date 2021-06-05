@@ -1,46 +1,46 @@
-import { useEffect, useState, useRef } from "react";
-import Questions from "./pages/Questions";
+import { useEffect, useState, useRef } from 'react'
+import Questions from './pages/Questions'
 
 function useCountry() {
-  const [countries, setCountries] = useState([]);
-  const [isShow, setIsShow] = useState(false);
-  const [isCorrect, setIsCorrect] = useState(false);
-  const [score, setScore] = useState(0);
-  const [showScore, setShowScore] = useState(false);
-  const btnRef = useRef(null);
-  const [disabled, setDisabled] = useState(false);
-  const [letters, setLetters] = useState(['A', 'B', 'C', 'D']);
- 
+  const [countries, setCountries] = useState([])
+  const [isShow, setIsShow] = useState(false)
+  const [isCorrect, setIsCorrect] = useState(false)
+  const [score, setScore] = useState(0)
+  const [showScore, setShowScore] = useState(false)
+  const btnRef = useRef(null)
+  const [disabled, setDisabled] = useState(false)
+  const [letters, setLetters] = useState(['A', 'B', 'C', 'D'])
+
   async function fetchCountries() {
-    const URL_IPA = "https://restcountries.eu/rest/v2/all";
-    const response = await fetch(URL_IPA);
-    const countries = await response.json();
-    getRandomeCountry(countries);
+    const URL_IPA = 'https://restcountries.eu/rest/v2/all'
+    const response = await fetch(URL_IPA)
+    const countries = await response.json()
+    getRandomeCountry(countries)
   }
 
   useEffect(() => {
     setTimeout(() => {
-      fetchCountries();
-    }, 1000);
+      fetchCountries()
+    }, 1000)
   }, [])
 
   function getRandomeCountry(countries) {
-    const random = countries[Math.floor(Math.random() * countries.length)];
-    const randomOpt1 = countries[Math.floor(Math.random() * countries.length)];
-    const randomOpt2 = countries[Math.floor(Math.random() * countries.length)];
-    const randomOpt3 = countries[Math.floor(Math.random() * countries.length)];
+    const random = countries[Math.floor(Math.random() * countries.length)]
+    const randomOpt1 = countries[Math.floor(Math.random() * countries.length)]
+    const randomOpt2 = countries[Math.floor(Math.random() * countries.length)]
+    const randomOpt3 = countries[Math.floor(Math.random() * countries.length)]
     const randomOptions = [
       random.name,
       randomOpt1.name,
       randomOpt2.name,
       randomOpt3.name,
-    ];
+    ]
     const sortedOptions = randomOptions.sort(() => {
-      return 0.5 - Math.random();
-    });
+      return 0.5 - Math.random()
+    })
 
     const randomQuestion =
-      Questions[Math.floor(Math.random() * Questions.length)];
+      Questions[Math.floor(Math.random() * Questions.length)]
 
     const countryQuiz = {
       question: randomQuestion,
@@ -49,43 +49,43 @@ function useCountry() {
       capital: random.capital,
       answers: sortedOptions,
       correctAnswer: random.name,
-      userAnswer: "",
-    };
+      userAnswer: '',
+    }
 
-    setCountries(countryQuiz);
+    setCountries(countryQuiz)
   }
 
   function handleClick(e) {
-    e.preventDefault();
-    const userGuess = e.target;
+    e.preventDefault()
+    const userGuess = e.target
     if (userGuess.value === countries.correctAnswer) {
-      setIsCorrect(true);
-      setScore(score + 1);
-      btnRef.current.classList.add('correct');
+      setIsCorrect(true)
+      setScore(score + 1)
+      btnRef.current.classList.add('correct')
     } else if (userGuess.value !== countries.correctAnswer) {
-      setIsCorrect(false);
-      setShowScore(false);
-      btnRef.current.classList.add('correct');
-      userGuess.classList.add('incorrect');
+      setIsCorrect(false)
+      setShowScore(false)
+      btnRef.current.classList.add('correct')
+      userGuess.classList.add('incorrect')
     }
-    setIsShow(!isShow);
-    setDisabled(true);
+    setIsShow(!isShow)
+    setDisabled(true)
   }
 
   function handleShowBtn() {
-    btnRef.current.classList.remove('correct');
-    setDisabled(!disabled);
-    fetchCountries();
-    setIsShow(false);
-    setShowScore(false);
+    btnRef.current.classList.remove('correct')
+    setDisabled(!disabled)
+    fetchCountries()
+    setIsShow(false)
+    setShowScore(false)
   }
 
   function tryTheGameAgain() {
-    fetchCountries();
-    setScore(0);
-    setShowScore(false);
-    setIsShow(false);
-    setDisabled(false);
+    fetchCountries()
+    setScore(0)
+    setShowScore(false)
+    setIsShow(false)
+    setDisabled(false)
   }
 
   return {
@@ -101,8 +101,8 @@ function useCountry() {
     setShowScore,
     letters,
     btnRef,
-    disabled
-  };
+    disabled,
+  }
 }
 
-export default useCountry;
+export default useCountry

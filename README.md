@@ -3,11 +3,11 @@
 <div align="center">
   <h3>
     <a href="https://github.com/Betsimisaraka/country-quiz">
-      Demo
+      Source
     </a>
     <span> | </span>
-    <a href="https://country-quiz-betsimisaraka.netlify.app/">
-      Solution
+    <a href="http://country-quiz.anita.onja.org">
+      Demo
     </a>
   </h3>
 </div>
@@ -27,7 +27,7 @@ You can see the the figma design [here](https://www.figma.com/file/Gw0ZNBbYN8asq
 
 - My experience
 
-I had quite lots of experience while doing this project: 
+I had quite lots of experience while doing this project:
 
 1. fetching the data from the api
 
@@ -39,13 +39,14 @@ I had quite lots of experience while doing this project:
 
 ### Built With
 
--   [React](https://reactjs.org/)
--   [Html](https://html.org/)
--   [Css](https://css.org)
+- [React](https://reactjs.org/)
+- [Html](https://html.org/)
+- [Css](https://css.org)
 
 ## Features
 
 These are the user stories that I had to fulfilled:
+
 - I can see at least 2 types of question: a city is the capital of.. or a flag belong to country..
 - I can see select an answer
 - I can see if my answer is correct or incorrect
@@ -71,14 +72,10 @@ $ npm start
 $ parcel index.html
 ```
 
-
 ## Contact
 
--   GitHub [Betsimisaraka](https://{github.com/Betsimisaraka})
+- GitHub [Betsimisaraka](https://{github.com/Betsimisaraka})
 
 **API**: https://restcountries.eu/. Use data from the API to create questions and answers.
 
 **Live app** : https://country-quiz-app.netlify.app/
-
-
-
