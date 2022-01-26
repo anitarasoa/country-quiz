@@ -12,7 +12,7 @@
   </h3>
 </div>
 
-In this project, I created a little quiz which contains two questions about a country. This is called a country quiz app using an API, and using React to handle the frontend.
+In this app uses an API to fetch Data and React to handle the frontend.
 
 ## Overview
 
@@ -23,36 +23,24 @@ In this project, I created a little quiz which contains two questions about a co
 
 ## Design
 
-You can see the the figma design [here](https://www.figma.com/file/Gw0ZNBbYN8asqFlZWy3jG1)
+You can see the the figma design [here](https://www.figma.com/file/Gw0ZNBbYN8asqFlZWy3jG1).
 
-- My experience
-
-I had quite lots of experience while doing this project:
-
-1. fetching the data from the api
-
-1. displaying the questions and the answers randomly.
-
-1. Check if the answer is correct or not and changing their background.
-
-1. Showing the score in the result page.
-
-### Built With
+## Built With
 
 - [React](https://reactjs.org/)
-- [Html](https://html.org/)
-- [Css](https://css.org)
+- [HTML](https://html.org/)
+- [CSS](https://css.org)
 
 ## Features
 
-These are the user stories that I had to fulfilled:
+These are the user stories that I fulfilled:
 
 - I can see at least 2 types of question: a city is the capital of.. or a flag belong to country..
-- I can see select an answer
-- I can see if my answer is correct or incorrect
-- When I answer correctly, I can move on to the next question
-- When I answer incorrectly, I can see my results and try again
-- I can try again
+- I can see select an answer.
+- I can see if my answer is correct or incorrect.
+- When I answer correctly, I can move on to the next question.
+- When I answer incorrectly, I can see my results and try again.
+- I can try again.
 
 ## How To Use
 
@@ -65,7 +53,7 @@ To clone and run this application, you'll need [Git](https://git-scm.com), [Node
 $ git clone https://github.com/Betsimisaraka/country-quiz
 
 # Install dependencies
-$ npm install react react-dom
+$ npm install
 
 # Run the app
 $ npm start
@@ -75,6 +63,8 @@ $ parcel index.html
 ## Contact
 
 - GitHub [Betsimisaraka](https://{github.com/Betsimisaraka})
+
+## Links
 
 **API**: https://restcountries.eu/. Use data from the API to create questions and answers.
 
