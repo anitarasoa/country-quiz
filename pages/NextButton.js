@@ -1,7 +1,6 @@
 import React from 'react';
 
-function NextButton(props) {
-    const { handleShowBtn, isCorrect, setIsCorrect, setShowScore } = props;
+function NextButton({ handleShowBtn, isCorrect, setIsCorrect, setShowScore }) {
     
     function showModal() {
         setIsCorrect(false)

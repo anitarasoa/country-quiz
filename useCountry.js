@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import Questions from './pages/Questions'
 
 function useCountry() {
@@ -12,8 +12,8 @@ function useCountry() {
   const [letters, setLetters] = useState(['A', 'B', 'C', 'D'])
 
   async function fetchCountries() {
-    const URL_IPA = 'https://restcountries.eu/rest/v2/all'
-    const response = await fetch(URL_IPA)
+    const URL_API = 'https://restcountries.com/v3.1/all'
+    const response = await fetch(URL_API)
     const countries = await response.json()
     getRandomeCountry(countries)
   }
@@ -43,29 +43,33 @@ function useCountry() {
     const countryQuiz = {
       question: randomQuestion,
       country: random,
-      flag: random.flag,
+      flag: random.flags,
       capital: random.capital,
       answers: sortedOptions,
       correctAnswer: random.name,
       userAnswer: '',
     }
-
-    setCountries(countryQuiz)
+    setCountries([countryQuiz])
   }
 
   function handleClick(e) {
     e.preventDefault()
     const userGuess = e.target
-    if (userGuess.value === countries.correctAnswer) {
-      setIsCorrect(true)
-      setScore(score + 1)
-      btnRef.current.classList.add('correct')
-    } else if (userGuess.value !== countries.correctAnswer) {
+    let userAnswer = userGuess.value;
+    let correctAnswer = countries && countries[0]?.correctAnswer?.common;
+    
+    if (userAnswer !== correctAnswer) {
       setIsCorrect(false)
       setShowScore(false)
-      btnRef.current.classList.add('correct')
-      userGuess.classList.add('incorrect')
+      btnRef.current.classList.add('correct');
+      userGuess.classList.add('incorrect');
+    } else {
+      setIsCorrect(true);
+      setScore(score + 1);
+      btnRef.current.classList.add('correct');
+      userGuess.classList.add('correct');
     }
+
     setIsShow(!isShow)
     setDisabled(true)
   }
