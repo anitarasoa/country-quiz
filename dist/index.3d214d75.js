@@ -2905,7 +2905,7 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _reactDom = require("react-dom");
 var _reactDomDefault = parcelHelpers.interopDefault(_reactDom);
-var _app = require("./pages/App");
+var _app = require("./App");
 var _appDefault = parcelHelpers.interopDefault(_app);
 (0, _reactDomDefault.default).render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _appDefault.default), {}, void 0, false, {
     fileName: "index.js",
@@ -2918,7 +2918,7 @@ var _appDefault = parcelHelpers.interopDefault(_app);
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom":"j6uA9","./pages/App":"9PbEH","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"iTorj":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom":"j6uA9","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./App":"2Ew96"}],"iTorj":[function(require,module,exports) {
 "use strict";
 module.exports = require("./cjs/react-jsx-dev-runtime.development.js");
 
@@ -24697,272 +24697,7 @@ module.exports = require("./cjs/scheduler-tracing.development.js");
     exports.unstable_wrap = unstable_wrap;
 })();
 
-},{}],"9PbEH":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$e168 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$e168.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _displayCounties = require("../pages/DisplayCounties");
-var _displayCountiesDefault = parcelHelpers.interopDefault(_displayCounties);
-var _header = require("../component/Header");
-var _headerDefault = parcelHelpers.interopDefault(_header);
-function App() {
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "main",
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _headerDefault.default), {}, void 0, false, {
-                fileName: "pages/App.js",
-                lineNumber: 9,
-                columnNumber: 13
-            }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _displayCountiesDefault.default), {}, void 0, false, {
-                fileName: "pages/App.js",
-                lineNumber: 10,
-                columnNumber: 13
-            }, this)
-        ]
-    }, void 0, true, {
-        fileName: "pages/App.js",
-        lineNumber: 8,
-        columnNumber: 9
-    }, this);
-}
-_c = App;
-exports.default = App;
-var _c;
-$RefreshReg$(_c, "App");
-
-  $parcel$ReactRefreshHelpers$e168.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../pages/DisplayCounties":"1DGyw","../component/Header":"iUeZa","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"1DGyw":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$3d50 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$3d50.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _useCountry = require("../useCountry");
-var _useCountryDefault = parcelHelpers.interopDefault(_useCountry);
-var _displayQuiz = require("./DisplayQuiz");
-var _displayQuizDefault = parcelHelpers.interopDefault(_displayQuiz);
-var _nextButton = require("./NextButton");
-var _nextButtonDefault = parcelHelpers.interopDefault(_nextButton);
-var _result = require("./Result");
-var _resultDefault = parcelHelpers.interopDefault(_result);
-var _s = $RefreshSig$();
-function DisplayCountries() {
-    _s();
-    const { countries , handleClick , handleShowBtn , isShow , isCorrect , tryTheGameAgain , score , showScore , setIsCorrect , setShowScore , letters , btnRef , disabled  } = (0, _useCountryDefault.default)();
-    let question = countries && countries[0]?.question?.question1;
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
-        children: showScore ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _resultDefault.default), {
-            score: score,
-            tryTheGameAgain: tryTheGameAgain
-        }, void 0, false, {
-            fileName: "pages/DisplayCounties.js",
-            lineNumber: 29,
-            columnNumber: 20
-        }, this) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-            className: `container ${question ? "first_question" : "second_question"}`,
-            children: [
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _displayQuizDefault.default), {
-                    countries: countries,
-                    handleClick: handleClick,
-                    letters: letters,
-                    btnRef: btnRef,
-                    disabled: disabled
-                }, void 0, false, {
-                    fileName: "pages/DisplayCounties.js",
-                    lineNumber: 32,
-                    columnNumber: 29
-                }, this),
-                isShow && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _nextButtonDefault.default), {
-                    handleShowBtn: handleShowBtn,
-                    isCorrect: isCorrect,
-                    setIsCorrect: setIsCorrect,
-                    setShowScore: setShowScore
-                }, void 0, false, {
-                    fileName: "pages/DisplayCounties.js",
-                    lineNumber: 39,
-                    columnNumber: 37
-                }, this)
-            ]
-        }, void 0, true, {
-            fileName: "pages/DisplayCounties.js",
-            lineNumber: 31,
-            columnNumber: 21
-        }, this)
-    }, void 0, false);
-}
-_s(DisplayCountries, "i4Pq8qn0ym5mskKTAVoQNL5Na7g=", false, function() {
-    return [
-        (0, _useCountryDefault.default)
-    ];
-});
-_c = DisplayCountries;
-exports.default = DisplayCountries;
-var _c;
-$RefreshReg$(_c, "DisplayCountries");
-
-  $parcel$ReactRefreshHelpers$3d50.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../useCountry":"ePJzA","./DisplayQuiz":"4hG2K","./NextButton":"kloXM","./Result":"gAUCa","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"ePJzA":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$0376 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$0376.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _questions = require("./pages/Questions");
-var _questionsDefault = parcelHelpers.interopDefault(_questions);
-var _s = $RefreshSig$();
-function useCountry() {
-    _s();
-    const [countries1, setCountries] = (0, _react.useState)([]);
-    const [isShow, setIsShow] = (0, _react.useState)(false);
-    const [isCorrect, setIsCorrect] = (0, _react.useState)(false);
-    const [score, setScore] = (0, _react.useState)(0);
-    const [showScore, setShowScore] = (0, _react.useState)(false);
-    const btnRef = (0, _react.useRef)(null);
-    const [disabled, setDisabled] = (0, _react.useState)(false);
-    const [letters, setLetters] = (0, _react.useState)([
-        "A",
-        "B",
-        "C",
-        "D"
-    ]);
-    async function fetchCountries() {
-        const URL_API = "https://restcountries.com/v3.1/all";
-        const response = await fetch(URL_API);
-        const countries = await response.json();
-        getRandomeCountry(countries);
-    }
-    (0, _react.useEffect)(()=>{
-        fetchCountries();
-    }, []);
-    function getRandomeCountry(countries) {
-        const random = countries[Math.floor(Math.random() * countries.length)];
-        const randomOpt1 = countries[Math.floor(Math.random() * countries.length)];
-        const randomOpt2 = countries[Math.floor(Math.random() * countries.length)];
-        const randomOpt3 = countries[Math.floor(Math.random() * countries.length)];
-        const randomOptions = [
-            random.name,
-            randomOpt1.name,
-            randomOpt2.name,
-            randomOpt3.name, 
-        ];
-        const sortedOptions = randomOptions.sort(()=>{
-            return 0.5 - Math.random();
-        });
-        const randomQuestion = (0, _questionsDefault.default)[Math.floor(Math.random() * (0, _questionsDefault.default).length)];
-        const countryQuiz = {
-            question: randomQuestion,
-            country: random,
-            flag: random.flags,
-            capital: random.capital,
-            answers: sortedOptions,
-            correctAnswer: random.name,
-            userAnswer: ""
-        };
-        setCountries([
-            countryQuiz
-        ]);
-    }
-    function handleClick(e) {
-        e.preventDefault();
-        const userGuess = e.target;
-        let userAnswer = userGuess.value;
-        let correctAnswer = countries1 && countries1[0]?.correctAnswer?.common;
-        if (userAnswer !== correctAnswer) {
-            setIsCorrect(false);
-            setShowScore(false);
-            btnRef.current.classList.add("correct");
-            userGuess.classList.add("incorrect");
-        } else {
-            setIsCorrect(true);
-            setScore(score + 1);
-            btnRef.current.classList.add("correct");
-            userGuess.classList.add("correct");
-        }
-        setIsShow(!isShow);
-        setDisabled(true);
-    }
-    function handleShowBtn() {
-        btnRef.current.classList.remove("correct");
-        setDisabled(!disabled);
-        fetchCountries();
-        setIsShow(false);
-        setShowScore(false);
-    }
-    function tryTheGameAgain() {
-        fetchCountries();
-        setScore(0);
-        setShowScore(false);
-        setIsShow(false);
-        setDisabled(false);
-    }
-    return {
-        handleClick,
-        countries: countries1,
-        handleShowBtn,
-        isShow,
-        score,
-        isCorrect,
-        setIsCorrect,
-        tryTheGameAgain,
-        showScore,
-        setShowScore,
-        letters,
-        btnRef,
-        disabled
-    };
-}
-_s(useCountry, "jT40h8nQrDNlBVh2b2Ret6K7NZg=");
-exports.default = useCountry;
-
-  $parcel$ReactRefreshHelpers$0376.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react":"21dqq","./pages/Questions":"cnoJb","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"cnoJb":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-const questions = [
-    {
-        question1: "is the capital of ",
-        id: 1
-    },
-    {
-        question2: "Wich country does this flag belong to ?",
-        id: 2
-    }
-];
-exports.default = questions;
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
+},{}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -25576,11 +25311,289 @@ module.exports = require("./cjs/react-refresh-runtime.development.js");
     exports.setSignature = setSignature;
 })();
 
-},{}],"4hG2K":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$034c = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+},{}],"2Ew96":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$c1db = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$034c.prelude(module);
+$parcel$ReactRefreshHelpers$c1db.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _displayCounties = require("./pages/DisplayCounties");
+var _displayCountiesDefault = parcelHelpers.interopDefault(_displayCounties);
+var _header = require("./component/Header");
+var _headerDefault = parcelHelpers.interopDefault(_header);
+function App() {
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "wrapper-image",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "background"
+            }, void 0, false, {
+                fileName: "App.js",
+                lineNumber: 9,
+                columnNumber: 13
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "content-continer",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _headerDefault.default), {}, void 0, false, {
+                        fileName: "App.js",
+                        lineNumber: 11,
+                        columnNumber: 17
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _displayCountiesDefault.default), {}, void 0, false, {
+                        fileName: "App.js",
+                        lineNumber: 12,
+                        columnNumber: 17
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "App.js",
+                lineNumber: 10,
+                columnNumber: 13
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "App.js",
+        lineNumber: 8,
+        columnNumber: 9
+    }, this);
+}
+_c = App;
+exports.default = App;
+var _c;
+$RefreshReg$(_c, "App");
+
+  $parcel$ReactRefreshHelpers$c1db.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./pages/DisplayCounties":"1DGyw","./component/Header":"iUeZa","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"1DGyw":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$3d50 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$3d50.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _useCountry = require("../useCountry");
+var _useCountryDefault = parcelHelpers.interopDefault(_useCountry);
+var _displayQuiz = require("../component/DisplayQuiz");
+var _displayQuizDefault = parcelHelpers.interopDefault(_displayQuiz);
+var _result = require("./Result");
+var _resultDefault = parcelHelpers.interopDefault(_result);
+var _s = $RefreshSig$();
+function DisplayCountries() {
+    _s();
+    const { countries , handleClick , handleShowBtn , isShow , isCorrect , tryTheGameAgain , score , showScore , setIsCorrect , setShowScore , letters , btnRef , disabled , loading  } = (0, _useCountryDefault.default)();
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+        children: showScore ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _resultDefault.default), {
+            score: score,
+            tryTheGameAgain: tryTheGameAgain
+        }, void 0, false, {
+            fileName: "pages/DisplayCounties.js",
+            lineNumber: 27,
+            columnNumber: 20
+        }, this) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _displayQuizDefault.default), {
+            countries: countries,
+            handleClick: handleClick,
+            letters: letters,
+            btnRef: btnRef,
+            disabled: disabled,
+            loading: loading,
+            handleShowBtn: handleShowBtn,
+            isCorrect: isCorrect,
+            setIsCorrect: setIsCorrect,
+            setShowScore: setShowScore,
+            isShow: isShow
+        }, void 0, false, {
+            fileName: "pages/DisplayCounties.js",
+            lineNumber: 29,
+            columnNumber: 21
+        }, this)
+    }, void 0, false);
+}
+_s(DisplayCountries, "Py4Jq5zR9Pg6AWzttroCdyG8dfk=", false, function() {
+    return [
+        (0, _useCountryDefault.default)
+    ];
+});
+_c = DisplayCountries;
+exports.default = DisplayCountries;
+var _c;
+$RefreshReg$(_c, "DisplayCountries");
+
+  $parcel$ReactRefreshHelpers$3d50.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../useCountry":"ePJzA","../component/DisplayQuiz":"doLNG","./Result":"gAUCa","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"ePJzA":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$0376 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$0376.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _utilities = require("./utilities");
+var _questions = require("./Questions");
+var _questionsDefault = parcelHelpers.interopDefault(_questions);
+var _s = $RefreshSig$();
+function useCountry() {
+    _s();
+    const [loading, setLoading] = (0, _react.useState)(false);
+    const [countries1, setCountries] = (0, _react.useState)([]);
+    const [isShow, setIsShow] = (0, _react.useState)(false);
+    const [isCorrect, setIsCorrect] = (0, _react.useState)(false);
+    const [score, setScore] = (0, _react.useState)(0);
+    const [showScore, setShowScore] = (0, _react.useState)(false);
+    const btnRef = (0, _react.useRef)(null);
+    const [disabled, setDisabled] = (0, _react.useState)(false);
+    const [letters, setLetters] = (0, _react.useState)([
+        "A",
+        "B",
+        "C",
+        "D"
+    ]);
+    async function fetchCountries() {
+        setLoading(true);
+        const URL_API = "https://restcountries.com/v3.1/all";
+        const response = await fetch(URL_API);
+        const countries = await response.json();
+        getRandomeCountry(countries);
+        setLoading(false);
+    }
+    (0, _react.useEffect)(()=>{
+        fetchCountries();
+    }, []);
+    function getRandomeCountry(countries) {
+        const rightAnswer = countries[(0, _utilities.randomeFunction)(countries)];
+        const option1 = countries[(0, _utilities.randomeFunction)(countries)];
+        const option2 = countries[(0, _utilities.randomeFunction)(countries)];
+        const option3 = countries[(0, _utilities.randomeFunction)(countries)];
+        const randomOptions = [
+            rightAnswer.name,
+            option1.name,
+            option2.name,
+            option3.name
+        ];
+        const sortedOptions = randomOptions.sort(()=>{
+            return 0.5 - Math.random();
+        });
+        const randomQuestion = (0, _questionsDefault.default)[(0, _utilities.randomeFunction)((0, _questionsDefault.default))];
+        const countryQuiz = {
+            question: randomQuestion,
+            country: rightAnswer,
+            flag: rightAnswer.flags,
+            capital: rightAnswer.capital,
+            answers: sortedOptions,
+            correctAnswer: rightAnswer.name,
+            userAnswer: ""
+        };
+        setCountries([
+            countryQuiz
+        ]);
+    }
+    function handleClick(e) {
+        e.preventDefault();
+        const userGuess = e.target;
+        let userAnswer = userGuess.value;
+        let correctAnswer = countries1 && countries1[0]?.correctAnswer?.common;
+        if (userAnswer !== correctAnswer) {
+            setIsCorrect(false);
+            setShowScore(false);
+            btnRef.current.classList.add("correct");
+            userGuess.classList.add("incorrect");
+        } else {
+            setIsCorrect(true);
+            setScore(score + 1);
+            btnRef.current.classList.add("correct");
+            userGuess.classList.add("correct");
+        }
+        setIsShow(!isShow);
+        setDisabled(true);
+    }
+    function handleShowBtn() {
+        btnRef.current.classList.remove("correct");
+        setDisabled(!disabled);
+        fetchCountries();
+        setIsShow(false);
+        setShowScore(false);
+    }
+    function tryTheGameAgain() {
+        fetchCountries();
+        setScore(0);
+        setShowScore(false);
+        setIsShow(false);
+        setDisabled(false);
+    }
+    return {
+        handleClick,
+        countries: countries1,
+        handleShowBtn,
+        isShow,
+        score,
+        isCorrect,
+        setIsCorrect,
+        tryTheGameAgain,
+        showScore,
+        setShowScore,
+        letters,
+        btnRef,
+        disabled,
+        loading
+    };
+}
+_s(useCountry, "uxtUN28wdaKtU+fNd/P8yTX4xb8=");
+exports.default = useCountry;
+
+  $parcel$ReactRefreshHelpers$0376.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react":"21dqq","./Questions":"6cGnb","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./utilities":"2DqlB"}],"6cGnb":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+const questions = [
+    {
+        question1: "is the capital of ",
+        id: 1
+    },
+    {
+        question2: "Wich country does this flag belong to ?",
+        id: 2
+    }
+];
+exports.default = questions;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"2DqlB":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "randomeFunction", ()=>randomeFunction);
+function randomeFunction(arr) {
+    return Math.floor(Math.random() * arr.length);
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"doLNG":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$dbe4 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$dbe4.prelude(module);
 
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -25590,13 +25603,14 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _undrawAdventure4Hum1Svg = require("../undraw_adventure_4hum1.svg");
 var _undrawAdventure4Hum1SvgDefault = parcelHelpers.interopDefault(_undrawAdventure4Hum1Svg);
-function DisplayQuiz({ countries , handleClick , disabled , letters , btnRef  }) {
-    console.log(countries);
+var _nextButton = require("./NextButton");
+var _nextButtonDefault = parcelHelpers.interopDefault(_nextButton);
+function DisplayQuiz({ countries , handleClick , disabled , letters , btnRef , loading , isShow , handleShowBtn , isCorrect , setIsCorrect , setShowScore  }) {
     const mapLetters = letters.map((letter, i)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
             className: "letters",
             children: letter
         }, i, false, {
-            fileName: "pages/DisplayQuiz.js",
+            fileName: "component/DisplayQuiz.js",
             lineNumber: 7,
             columnNumber: 51
         }, this));
@@ -25604,87 +25618,131 @@ function DisplayQuiz({ countries , handleClick , disabled , letters , btnRef  })
     let question2 = countries && countries[0]?.question?.question2;
     let capital = countries && countries[0]?.capital;
     let flag = countries && countries[0]?.flag?.png;
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("main", {
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: `container ${question1 ? "first_question" : "second_question"}`,
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
                 className: "adventure",
                 src: (0, _undrawAdventure4Hum1SvgDefault.default),
                 alt: "Images"
             }, void 0, false, {
-                fileName: "pages/DisplayQuiz.js",
+                fileName: "component/DisplayQuiz.js",
                 lineNumber: 16,
                 columnNumber: 13
             }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "question_content",
-                children: question1 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-                    className: "question first_question__heading",
-                    children: [
-                        capital,
-                        " ",
-                        question1
-                    ]
-                }, void 0, true, {
-                    fileName: "pages/DisplayQuiz.js",
-                    lineNumber: 19,
-                    columnNumber: 25
-                }, this) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "next_qestion",
-                    children: [
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                            className: "question-image",
-                            src: flag,
-                            alt: capital
-                        }, void 0, false, {
-                            fileName: "pages/DisplayQuiz.js",
-                            lineNumber: 21,
-                            columnNumber: 29
-                        }, this),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-                            className: "question second_question__heading",
-                            children: question2
-                        }, void 0, false, {
-                            fileName: "pages/DisplayQuiz.js",
-                            lineNumber: 22,
-                            columnNumber: 29
-                        }, this)
-                    ]
-                }, void 0, true, {
-                    fileName: "pages/DisplayQuiz.js",
-                    lineNumber: 20,
-                    columnNumber: 25
-                }, this)
-            }, void 0, false, {
-                fileName: "pages/DisplayQuiz.js",
+            loading ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "loading_container",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                        className: "loading_heading",
+                        children: "Fetching a new quiz"
+                    }, void 0, false, {
+                        fileName: "component/DisplayQuiz.js",
+                        lineNumber: 17,
+                        columnNumber: 60
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        class: "spinner"
+                    }, void 0, false, {
+                        fileName: "component/DisplayQuiz.js",
+                        lineNumber: 17,
+                        columnNumber: 116
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "component/DisplayQuiz.js",
                 lineNumber: 17,
-                columnNumber: 13
-            }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "button_container",
-                children: countries && countries[0]?.answers.map((option, i)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                        className: "answer_btn",
-                        value: option?.common,
-                        onClick: handleClick,
-                        disabled: disabled,
-                        ref: countries && countries[0]?.correctAnswer?.common === option?.common ? btnRef : null,
+                columnNumber: 25
+            }, this) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "question_content",
+                        children: question1 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                            className: "question first_question__heading",
+                            children: [
+                                capital,
+                                " ",
+                                question1
+                            ]
+                        }, void 0, true, {
+                            fileName: "component/DisplayQuiz.js",
+                            lineNumber: 21,
+                            columnNumber: 33
+                        }, this) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                            className: "next_qestion",
+                            children: [
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                                    className: "question-flag",
+                                    src: flag,
+                                    alt: capital
+                                }, void 0, false, {
+                                    fileName: "component/DisplayQuiz.js",
+                                    lineNumber: 23,
+                                    columnNumber: 37
+                                }, this),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                                    className: "question second_question__heading",
+                                    children: question2
+                                }, void 0, false, {
+                                    fileName: "component/DisplayQuiz.js",
+                                    lineNumber: 24,
+                                    columnNumber: 37
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "component/DisplayQuiz.js",
+                            lineNumber: 22,
+                            columnNumber: 33
+                        }, this)
+                    }, void 0, false, {
+                        fileName: "component/DisplayQuiz.js",
+                        lineNumber: 19,
+                        columnNumber: 21
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "button_container",
                         children: [
-                            mapLetters[i],
-                            " ",
-                            option?.common
+                            countries && countries[0]?.answers.map((option, i)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                    className: "answer_btn",
+                                    value: option?.common,
+                                    onClick: handleClick,
+                                    disabled: disabled,
+                                    ref: countries && countries[0]?.correctAnswer?.common === option?.common ? btnRef : null,
+                                    children: [
+                                        mapLetters[i],
+                                        " ",
+                                        option?.common
+                                    ]
+                                }, i, true, {
+                                    fileName: "component/DisplayQuiz.js",
+                                    lineNumber: 30,
+                                    columnNumber: 29
+                                }, this)),
+                            isShow && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _nextButtonDefault.default), {
+                                handleShowBtn: handleShowBtn,
+                                isCorrect: isCorrect,
+                                setIsCorrect: setIsCorrect,
+                                setShowScore: setShowScore
+                            }, void 0, false, {
+                                fileName: "component/DisplayQuiz.js",
+                                lineNumber: 39,
+                                columnNumber: 37
+                            }, this)
                         ]
-                    }, i, true, {
-                        fileName: "pages/DisplayQuiz.js",
+                    }, void 0, true, {
+                        fileName: "component/DisplayQuiz.js",
                         lineNumber: 28,
                         columnNumber: 21
-                    }, this))
-            }, void 0, false, {
-                fileName: "pages/DisplayQuiz.js",
-                lineNumber: 26,
-                columnNumber: 13
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "component/DisplayQuiz.js",
+                lineNumber: 18,
+                columnNumber: 17
             }, this)
         ]
     }, void 0, true, {
-        fileName: "pages/DisplayQuiz.js",
+        fileName: "component/DisplayQuiz.js",
         lineNumber: 15,
         columnNumber: 9
     }, this);
@@ -25694,12 +25752,12 @@ exports.default = DisplayQuiz;
 var _c;
 $RefreshReg$(_c, "DisplayQuiz");
 
-  $parcel$ReactRefreshHelpers$034c.postlude(module);
+  $parcel$ReactRefreshHelpers$dbe4.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../undraw_adventure_4hum1.svg":"ln5bB","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"ln5bB":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../undraw_adventure_4hum1.svg":"ln5bB","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./NextButton":"i6rG9"}],"ln5bB":[function(require,module,exports) {
 module.exports = require("./helpers/bundle-url").getBundleURL("UckoE") + "undraw_adventure_4hum1.5e647fb9.svg" + "?" + Date.now();
 
 },{"./helpers/bundle-url":"lgJ39"}],"lgJ39":[function(require,module,exports) {
@@ -25736,11 +25794,11 @@ exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
 exports.getOrigin = getOrigin;
 
-},{}],"kloXM":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$1bb8 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+},{}],"i6rG9":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$c7ae = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$1bb8.prelude(module);
+$parcel$ReactRefreshHelpers$c7ae.prelude(module);
 
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -25760,7 +25818,7 @@ function NextButton({ handleShowBtn , isCorrect , setIsCorrect , setShowScore  }
             onClick: handleShowBtn,
             children: "Next"
         }, void 0, false, {
-            fileName: "pages/NextButton.js",
+            fileName: "component/NextButton.js",
             lineNumber: 13,
             columnNumber: 19
         }, this) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -25768,12 +25826,12 @@ function NextButton({ handleShowBtn , isCorrect , setIsCorrect , setShowScore  }
             onClick: showModal,
             children: "Next"
         }, void 0, false, {
-            fileName: "pages/NextButton.js",
+            fileName: "component/NextButton.js",
             lineNumber: 14,
             columnNumber: 19
         }, this)
     }, void 0, false, {
-        fileName: "pages/NextButton.js",
+        fileName: "component/NextButton.js",
         lineNumber: 11,
         columnNumber: 9
     }, this);
@@ -25783,7 +25841,7 @@ exports.default = NextButton;
 var _c;
 $RefreshReg$(_c, "NextButton");
 
-  $parcel$ReactRefreshHelpers$1bb8.postlude(module);
+  $parcel$ReactRefreshHelpers$c7ae.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;

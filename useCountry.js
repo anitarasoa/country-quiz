@@ -1,7 +1,9 @@
 import React, { useEffect, useState, useRef } from 'react'
-import Questions from './pages/Questions'
+import {randomeFunction} from './utilities'
+import Questions from './Questions'
 
 function useCountry() {
+  const [loading, setLoading] = useState(false)
   const [countries, setCountries] = useState([])
   const [isShow, setIsShow] = useState(false)
   const [isCorrect, setIsCorrect] = useState(false)
@@ -12,41 +14,39 @@ function useCountry() {
   const [letters, setLetters] = useState(['A', 'B', 'C', 'D'])
 
   async function fetchCountries() {
+    setLoading(true)
     const URL_API = 'https://restcountries.com/v3.1/all'
     const response = await fetch(URL_API)
     const countries = await response.json()
     getRandomeCountry(countries)
+    setLoading(false)
   }
 
   useEffect(() => {
     fetchCountries()
-  }, [])
+  }, []);
 
   function getRandomeCountry(countries) {
-    const random = countries[Math.floor(Math.random() * countries.length)]
-    const randomOpt1 = countries[Math.floor(Math.random() * countries.length)]
-    const randomOpt2 = countries[Math.floor(Math.random() * countries.length)]
-    const randomOpt3 = countries[Math.floor(Math.random() * countries.length)]
-    const randomOptions = [
-      random.name,
-      randomOpt1.name,
-      randomOpt2.name,
-      randomOpt3.name,
-    ]
+    const rightAnswer = countries[randomeFunction(countries)]
+    const option1 = countries[randomeFunction(countries)]
+    const option2 = countries[randomeFunction(countries)]
+    const option3 = countries[randomeFunction(countries)]
+
+    const randomOptions = [rightAnswer.name, option1.name, option2.name, option3.name]
+
     const sortedOptions = randomOptions.sort(() => {
       return 0.5 - Math.random()
     })
 
-    const randomQuestion =
-      Questions[Math.floor(Math.random() * Questions.length)]
+    const randomQuestion = Questions[randomeFunction(Questions)]
 
     const countryQuiz = {
       question: randomQuestion,
-      country: random,
-      flag: random.flags,
-      capital: random.capital,
+      country: rightAnswer,
+      flag: rightAnswer.flags,
+      capital: rightAnswer.capital,
       answers: sortedOptions,
-      correctAnswer: random.name,
+      correctAnswer: rightAnswer.name,
       userAnswer: '',
     }
     setCountries([countryQuiz])
@@ -104,6 +104,7 @@ function useCountry() {
     letters,
     btnRef,
     disabled,
+    loading
   }
 }
 

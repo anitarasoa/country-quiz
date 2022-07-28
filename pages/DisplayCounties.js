@@ -1,7 +1,6 @@
 import React from 'react';
 import useCountry from '../useCountry';
-import DisplayQuiz from './DisplayQuiz';
-import NextButton from './NextButton';
+import DisplayQuiz from '../component/DisplayQuiz';
 import TryAgain from './Result';
 
 function DisplayCountries() {
@@ -18,31 +17,28 @@ function DisplayCountries() {
         setShowScore,
         letters,
         btnRef,
-        disabled
+        disabled,
+        loading
     } = useCountry();
-
-    let question = countries && countries[0]?.question?.question1;
 
     return (
         <>
             {showScore
                 ? (<TryAgain score={score} tryTheGameAgain={tryTheGameAgain} />)
                 : (
-                    <div className={`container ${question ? "first_question" : "second_question"}`}>
-                            <DisplayQuiz
-                                countries={countries}
-                                handleClick={handleClick}
-                                letters={letters}
-                                btnRef={btnRef}
-                                disabled={disabled}
-                            />
-                        {isShow && (<NextButton
-                            handleShowBtn={handleShowBtn}
-                            isCorrect={isCorrect}
-                            setIsCorrect={setIsCorrect}
-                            setShowScore={setShowScore}
-                        />)}
-                    </div>
+                    <DisplayQuiz
+                        countries={countries}
+                        handleClick={handleClick}
+                        letters={letters}
+                        btnRef={btnRef}
+                        disabled={disabled}
+                        loading={loading}
+                        handleShowBtn={handleShowBtn}
+                        isCorrect={isCorrect}
+                        setIsCorrect={setIsCorrect}
+                        setShowScore={setShowScore}
+                        isShow={isShow}
+                    />
                 )
             }
         </>

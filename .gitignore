@@ -1,5 +1,5 @@
 .cache
 /node_modules
 .DS_Store
-/.parcel-cache
+.parcel-cache
 package-lock.json
