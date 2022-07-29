@@ -12,7 +12,7 @@
   </h3>
 </div>
 
-In this app uses an API to fetch Data and React to handle the frontend.
+In this application, I uses an API to fetch Data and React to handle the frontend.
 
 ## Overview
 
